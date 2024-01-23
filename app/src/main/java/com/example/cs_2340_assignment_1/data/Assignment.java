@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  * @see Timestamp
  * @see Course
  */
-public class Assignment implements Comparable<Assignment> {
+public final class Assignment implements Comparable<Assignment> {
     /**
      * Assignment title. (required)
      */

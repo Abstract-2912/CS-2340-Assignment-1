@@ -11,7 +11,7 @@ import java.sql.Timestamp;
  * @see Time
  * @see Course
  */
-public class Exam implements Comparable<Exam> {
+public final class Exam implements Comparable<Exam> {
     /**
      * Exam name. (required)
      */

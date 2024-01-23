@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
  * @see PriorityQueue
  * @see Timestamp
  */
-public class Course {
+public final class Course {
     /**
      * Name of the course. (required)
      */
