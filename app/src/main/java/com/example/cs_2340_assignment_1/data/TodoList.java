@@ -15,7 +15,7 @@ public class TodoList {
     /**
      * Underlying priority queue for TodoList
      */
-    private PriorityQueue<TodoItem> todoListStructure;
+    private final PriorityQueue<TodoItem> todoListStructure;
 
     /**
      * Constructs a TodoList off of an existing priority queue.
@@ -127,10 +127,10 @@ public class TodoList {
                 throw new NullPointerException("Can not create null named todo item");
             }
 
-            this.name = name;
-            this.priority = priority;
-            this.dueDate = dueDate;
-            this.notes = notes;
+            setName(name);
+            setPriority(priority);
+            setDueDate(dueDate);
+            setNotes(notes);
         }
 
         /**
@@ -200,6 +200,78 @@ public class TodoList {
                 return castedObj.name.equals(this.name) && castedObj.priority == this.priority && castedObj.dueDate.equals(dueDate);
             }
             return false;
+        }
+
+        /**
+         * Returns the name of the item.
+         * @return name
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * Sets the name of the item to a given name.
+         * @param name given name
+         */
+        public void setName(String name) {
+            if (name == null) {
+                throw new NullPointerException("Item name can not be null!");
+            } else if (name.isBlank() || name.isEmpty()) {
+                throw new IllegalArgumentException("Item name can not be empty!");
+            }
+            this.name = name;
+        }
+
+        /**
+         * Returns the priority of item.
+         * @return priority
+         */
+        public int getPriority() {
+            return priority;
+        }
+
+        /**
+         * Sets the priority of an item to a given priority.
+         * @param priority given priority
+         */
+        public void setPriority(int priority) {
+            this.priority = priority;
+        }
+
+        /**
+         * Returns the due date of the item.
+         * @return item due date
+         */
+        public Timestamp getDueDate() {
+            return dueDate;
+        }
+
+        /**
+         * Sets the due date of the item to a given timestamp.
+         * @param dueDate given timestamp
+         */
+        public void setDueDate(Timestamp dueDate) {
+            this.dueDate = dueDate;
+        }
+
+        /**
+         * Returns the associated notes for the item.
+         * @return notes
+         */
+        public String getNotes() {
+            return notes;
+        }
+
+        /**
+         * Sets the associated notes for the item to a given string.
+         * @param notes given string
+         */
+        public void setNotes(String notes) {
+            if (notes == null) {
+                notes = "";
+            }
+            this.notes = notes;
         }
     }
 }
