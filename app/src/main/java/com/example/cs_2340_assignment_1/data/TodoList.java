@@ -194,17 +194,15 @@ public class TodoList {
             if (o == this || o.equals(this))
                 return 0;
 
-            if (this.dueDate == null || o.dueDate == null) {
-                return Integer.compare(this.priority, o.priority);
-            } else {
+            if (this.dueDate != null && o.dueDate != null) {
                 if (this.priority == o.priority) {
                     if (this.dueDate.equals(o.dueDate)) {
                         return this.name.compareTo(o.name);
                     }
                     return this.dueDate.compareTo(o.dueDate);
                 }
-                return Integer.compare(this.priority, o.priority);
             }
+            return Integer.compare(this.priority, o.priority);
         }
 
         /**
