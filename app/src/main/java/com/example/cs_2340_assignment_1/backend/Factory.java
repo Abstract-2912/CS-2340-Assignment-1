@@ -216,4 +216,49 @@ final class Factory {
     ) {
         createExam(name, associatedCourse, startTime, duration, "");
     }
+
+    /**
+     * Creates a new TodoList.
+     * @param name name of list
+     */
+    public void createTodoList(
+            String name
+    ) {
+        if (State.getTodoLists().containsKey(name)) {
+            throw new IllegalArgumentException(
+                    "Todo list with name already exists! Can not be created!"
+            );
+        } else {
+            TodoList list = new TodoList(name);
+            var lists = State.getTodoLists();
+            lists.put(name, list);
+            State.update(State.getCourseMap(), lists);
+        }
+    }
+
+    /**
+     * Creates an item inside of an existing TodoList.
+     * @param list existing list
+     * @param name name
+     * @param priority priority
+     * @param dueDate due date
+     * @param notes notes
+     */
+    public void createTodoListItem(
+            TodoList list,
+            String name,
+            int priority,
+            Timestamp dueDate,
+            String notes
+    ) {
+        if (list == null) {
+            throw new NullPointerException("List can not be null!");
+        }
+        list.addItem(name, priority, dueDate, notes);
+        var lists = State.getTodoLists();
+        if (lists.containsKey(list.getName())) {
+            lists.put(list.getName(), list);
+        }
+        State.update(State.getCourseMap(), State.getTodoLists());
+    }
 }

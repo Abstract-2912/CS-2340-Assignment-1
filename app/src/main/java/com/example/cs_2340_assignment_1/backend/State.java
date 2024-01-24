@@ -25,7 +25,7 @@ public final class State {
     private static HashMap<String, Course> courseMap = new HashMap<>();
     private static final PriorityQueue<Assignment> assignmentsPriorityQueue = new PriorityQueue<>();
     private static final PriorityQueue<Exam> examsPriorityQueue = new PriorityQueue<>();
-    private static List<TodoList> todoLists = new ArrayList<>();
+    private static HashMap<String, TodoList> todoLists = new HashMap<>();
 
     // METHODS
     public static HashMap<String, Course> getCourseMap() {
@@ -40,7 +40,7 @@ public final class State {
         return examsPriorityQueue;
     }
 
-    public static List<TodoList> getTodoLists() {
+    public static HashMap<String, TodoList> getTodoLists() {
         return todoLists;
     }
 
@@ -48,7 +48,7 @@ public final class State {
         courseMap = map;
     }
 
-    private static void setTodoLists(List<TodoList> lists) {
+    private static void setTodoLists(HashMap<String, TodoList> lists) {
         todoLists = lists;
     }
 
@@ -60,7 +60,7 @@ public final class State {
      * @param courseMap course map
      * @param todoLists lists
      */
-    public static void update(HashMap<String, Course> courseMap, List<TodoList> todoLists) {
+    public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> lists) {
         if (State.courseMap != courseMap) {
             setCourseMap(courseMap);
             assignmentsPriorityQueue.clear();

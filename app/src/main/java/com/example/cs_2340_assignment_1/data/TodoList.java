@@ -13,6 +13,11 @@ import java.util.PriorityQueue;
 public class TodoList {
 
     /**
+     * Name of TodoList
+     */
+    private String name;
+
+    /**
      * Underlying priority queue for TodoList
      */
     private final PriorityQueue<TodoItem> todoListStructure;
@@ -22,15 +27,20 @@ public class TodoList {
      *
      * @param todoListStructure list priority queue
      */
-    public TodoList(PriorityQueue<TodoItem> todoListStructure) {
+    public TodoList(String name, PriorityQueue<TodoItem> todoListStructure) {
+        if (name == null) {
+            throw new NullPointerException("List name can not be null!");
+        } else if (name.isEmpty() || name.isBlank()) {
+            throw new IllegalArgumentException("List name can not be empty!");
+        }
         this.todoListStructure = new PriorityQueue<>(todoListStructure);
     }
 
     /**
      * Default TodoList constructor.
      */
-    public TodoList() {
-        this.todoListStructure = new PriorityQueue<>();
+    public TodoList(String name) {
+        this(name, new PriorityQueue<>());
     }
 
     /**
@@ -75,6 +85,15 @@ public class TodoList {
      */
     public void removeItem(TodoItem item) {
         todoListStructure.remove(item);
+    }
+
+    /**
+     * Returns the name of the TodoList.
+     *
+     * @return name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
