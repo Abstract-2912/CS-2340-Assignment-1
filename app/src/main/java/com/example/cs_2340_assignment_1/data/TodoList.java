@@ -223,6 +223,7 @@ public class TodoList {
 
         /**
          * Returns the name of the item.
+         *
          * @return name
          */
         public String getName() {
@@ -231,6 +232,7 @@ public class TodoList {
 
         /**
          * Sets the name of the item to a given name.
+         *
          * @param name given name
          */
         public void setName(String name) {
@@ -244,6 +246,7 @@ public class TodoList {
 
         /**
          * Returns the priority of item.
+         *
          * @return priority
          */
         public int getPriority() {
@@ -252,6 +255,7 @@ public class TodoList {
 
         /**
          * Sets the priority of an item to a given priority.
+         *
          * @param priority given priority
          */
         public void setPriority(int priority) {
@@ -260,6 +264,7 @@ public class TodoList {
 
         /**
          * Returns the due date of the item.
+         *
          * @return item due date
          */
         public Timestamp getDueDate() {
@@ -268,6 +273,7 @@ public class TodoList {
 
         /**
          * Sets the due date of the item to a given timestamp.
+         *
          * @param dueDate given timestamp
          */
         public void setDueDate(Timestamp dueDate) {
@@ -276,6 +282,7 @@ public class TodoList {
 
         /**
          * Returns the associated notes for the item.
+         *
          * @return notes
          */
         public String getNotes() {
@@ -284,6 +291,7 @@ public class TodoList {
 
         /**
          * Sets the associated notes for the item to a given string.
+         *
          * @param notes given string
          */
         public void setNotes(String notes) {

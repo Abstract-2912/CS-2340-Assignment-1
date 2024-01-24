@@ -5,9 +5,7 @@ import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.Exam;
 import com.example.cs_2340_assignment_1.data.TodoList;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -53,6 +51,7 @@ public final class State {
     }
 
     // UPDATE
+
     /**
      * Updates state variables based on course map and lists.
      * Should be called when any creation, edit, or deletion is made.

@@ -127,6 +127,7 @@ public final class Course {
 
     /**
      * Returns if course is equal to another object.
+     *
      * @param o Object
      * @return equality value
      */
@@ -135,11 +136,11 @@ public final class Course {
         if (o instanceof Course) {
             return this == o || (
                     this.name.equals(((Course) o).name)
-                    && this.instructorName.equals(((Course) o).instructorName)
-                    && this.courseTimes.equals(((Course) o).courseTimes)
-                    && this.assignments.equals(((Course) o).assignments)
-                    && this.exams.equals(((Course) o).exams)
-                    && this.notes.equals(((Course) o).notes)
+                            && this.instructorName.equals(((Course) o).instructorName)
+                            && this.courseTimes.equals(((Course) o).courseTimes)
+                            && this.assignments.equals(((Course) o).assignments)
+                            && this.exams.equals(((Course) o).exams)
+                            && this.notes.equals(((Course) o).notes)
             );
         }
         return false;

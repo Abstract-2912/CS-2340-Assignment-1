@@ -1,12 +1,14 @@
 package com.example.cs_2340_assignment_1.backend;
 
-import com.example.cs_2340_assignment_1.data.*;
+import com.example.cs_2340_assignment_1.data.Assignment;
+import com.example.cs_2340_assignment_1.data.Course;
+import com.example.cs_2340_assignment_1.data.Exam;
+import com.example.cs_2340_assignment_1.data.TodoList;
 
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 /**
  * Singleton package-private.
@@ -22,10 +24,11 @@ final class Factory {
 
     /**
      * Creates a course with parameters.
-     * @param name name
+     *
+     * @param name           name
      * @param instructorName instructor name
-     * @param courseTimes course times
-     * @param notes notes
+     * @param courseTimes    course times
+     * @param notes          notes
      */
     public void createCourse(
             String name,
@@ -47,9 +50,10 @@ final class Factory {
 
     /**
      * Creates a course with parameters.
-     * @param name name
+     *
+     * @param name           name
      * @param instructorName instructor name
-     * @param courseTimes course times
+     * @param courseTimes    course times
      */
     public void createCourse(String name, String instructorName, List<Timestamp[]> courseTimes) {
         createCourse(name, instructorName, courseTimes, "");
@@ -57,7 +61,8 @@ final class Factory {
 
     /**
      * Creates a course with parameters.
-     * @param name name
+     *
+     * @param name           name
      * @param instructorName instructor name
      */
     public void createCourse(String name, String instructorName) { // not recommended
@@ -66,6 +71,7 @@ final class Factory {
 
     /**
      * Creates a course with parameters.
+     *
      * @param name name
      */
     public void createCourse(String name) { // not recommended
@@ -74,11 +80,12 @@ final class Factory {
 
     /**
      * Creates an assignment with parameters.
-     * @param title title
+     *
+     * @param title            title
      * @param associatedCourse associated course
-     * @param assignedDate assigned date
-     * @param dueDate due date
-     * @param notes notes
+     * @param assignedDate     assigned date
+     * @param dueDate          due date
+     * @param notes            notes
      */
     public void createAssignment(
             String title,
@@ -107,10 +114,11 @@ final class Factory {
 
     /**
      * Creates an assignment with parameters.
-     * @param title title
+     *
+     * @param title            title
      * @param associatedCourse associated course
-     * @param dueDate due date
-     * @param notes notes
+     * @param dueDate          due date
+     * @param notes            notes
      */
     public void createAssignment(
             String title,
@@ -123,9 +131,10 @@ final class Factory {
 
     /**
      * Creates an assignment with parameters.
-     * @param title title
+     *
+     * @param title            title
      * @param associatedCourse associated course
-     * @param dueDate due date
+     * @param dueDate          due date
      */
     public void createAssignment(String title, Course associatedCourse, Timestamp dueDate) {
         createAssignment(title, associatedCourse, dueDate, "");
@@ -133,11 +142,12 @@ final class Factory {
 
     /**
      * Creates an exam with parameters.
-     * @param name name
+     *
+     * @param name             name
      * @param associatedCourse associated course
-     * @param startTime start time
-     * @param endTime end time
-     * @param notes notes
+     * @param startTime        start time
+     * @param endTime          end time
+     * @param notes            notes
      */
     public void createExam(
             String name,
@@ -160,10 +170,11 @@ final class Factory {
 
     /**
      * Creates an exam with parameters.
-     * @param name name
+     *
+     * @param name             name
      * @param associatedCourse associated course
-     * @param startTime start time
-     * @param endTime end time
+     * @param startTime        start time
+     * @param endTime          end time
      */
     public void createExam(
             String name,
@@ -176,11 +187,12 @@ final class Factory {
 
     /**
      * Creates an exam with parameters.
-     * @param name name
+     *
+     * @param name             name
      * @param associatedCourse associated course
-     * @param startTime start time
-     * @param duration duration
-     * @param notes notes
+     * @param startTime        start time
+     * @param duration         duration
+     * @param notes            notes
      */
     public void createExam(
             String name,
@@ -203,10 +215,11 @@ final class Factory {
 
     /**
      * Creates an exam with parameters.
-     * @param name name
+     *
+     * @param name             name
      * @param associatedCourse associated course
-     * @param startTime start time
-     * @param duration duration
+     * @param startTime        start time
+     * @param duration         duration
      */
     public void createExam(
             String name,
@@ -219,6 +232,7 @@ final class Factory {
 
     /**
      * Creates a new TodoList.
+     *
      * @param name name of list
      */
     public void createTodoList(
@@ -238,11 +252,12 @@ final class Factory {
 
     /**
      * Creates an item inside of an existing TodoList.
-     * @param list existing list
-     * @param name name
+     *
+     * @param list     existing list
+     * @param name     name
      * @param priority priority
-     * @param dueDate due date
-     * @param notes notes
+     * @param dueDate  due date
+     * @param notes    notes
      */
     public void createTodoListItem(
             TodoList list,
