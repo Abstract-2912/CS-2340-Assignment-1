@@ -46,7 +46,13 @@ public final class Exam implements Comparable<Exam> {
      * @param endTime          end time
      * @param notes            notes
      */
-    public Exam(String name, Course associatedCourse, Timestamp startTime, Timestamp endTime, String notes) {
+    public Exam(
+            String name,
+            Course associatedCourse,
+            Timestamp startTime,
+            Timestamp endTime,
+            String notes
+    ) {
         if (name == null || associatedCourse == null || startTime == null || endTime == null) {
             throw new NullPointerException("Missing fields: can not instantiate exam object");
         }
@@ -69,7 +75,13 @@ public final class Exam implements Comparable<Exam> {
      * @param duration         duration
      * @param notes            notes
      */
-    public Exam(String name, Course associatedCourse, Timestamp startTime, Time duration, String notes) {
+    public Exam(
+            String name,
+            Course associatedCourse,
+            Timestamp startTime,
+            Time duration,
+            String notes
+    ) {
         if (name == null || associatedCourse == null || startTime == null || endTime == null) {
             throw new NullPointerException("Missing fields: can not instantiate exam object");
         }

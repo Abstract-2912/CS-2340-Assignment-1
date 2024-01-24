@@ -60,7 +60,7 @@ public final class State {
      * @param courseMap course map
      * @param todoLists lists
      */
-    public void update(HashMap<String, Course> courseMap, List<TodoList> todoLists) {
+    public static void update(HashMap<String, Course> courseMap, List<TodoList> todoLists) {
         if (State.courseMap != courseMap) {
             setCourseMap(courseMap);
             assignmentsPriorityQueue.clear();

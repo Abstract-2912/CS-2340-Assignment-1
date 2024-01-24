@@ -44,7 +44,13 @@ public final class Assignment implements Comparable<Assignment> {
      * @param dueDate          assignment due date
      * @param notes            assignment notes
      */
-    public Assignment(String title, Course associatedCourse, Timestamp assignedDate, Timestamp dueDate, String notes) {
+    public Assignment(
+            String title,
+            Course associatedCourse,
+            Timestamp assignedDate,
+            Timestamp dueDate,
+            String notes
+    ) {
         if (title == null || associatedCourse == null || dueDate == null) {
             throw new NullPointerException("Missing fields: can not instantiate assignment object");
         }
