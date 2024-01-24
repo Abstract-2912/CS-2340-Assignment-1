@@ -100,7 +100,7 @@ public final class Course {
      * @param courseTimes    course times
      * @see Course
      */
-    public Course(String name, String instructorName, List<Timestamp[]> courseTimes) {
+    private Course(String name, String instructorName, List<Timestamp[]> courseTimes) {
         this(name, instructorName, courseTimes, "");
     }
 
@@ -111,7 +111,7 @@ public final class Course {
      * @param instructorName instructor name
      * @see Course
      */
-    public Course(String name, String instructorName) {
+    private Course(String name, String instructorName) {
         this(name, instructorName, new ArrayList<>());
     }
 
@@ -121,7 +121,7 @@ public final class Course {
      * @param name course name
      * @see Course
      */
-    public Course(String name) {
+    private Course(String name) {
         this(name, "");
     }
 

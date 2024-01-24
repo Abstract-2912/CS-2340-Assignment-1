@@ -72,7 +72,7 @@ public final class Assignment implements Comparable<Assignment> {
      * @param dueDate          assignment due date
      * @param notes            assignment notes
      */
-    public Assignment(String title, Course associatedCourse, Timestamp dueDate, String notes) {
+    private Assignment(String title, Course associatedCourse, Timestamp dueDate, String notes) {
         this(title, associatedCourse, null, dueDate, notes);
     }
 
@@ -83,7 +83,7 @@ public final class Assignment implements Comparable<Assignment> {
      * @param associatedCourse associated course
      * @param dueDate          assignment due date
      */
-    public Assignment(String title, Course associatedCourse, Timestamp dueDate) {
+    private Assignment(String title, Course associatedCourse, Timestamp dueDate) {
         this(title, associatedCourse, dueDate, "");
     }
 

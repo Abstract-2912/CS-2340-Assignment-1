@@ -103,7 +103,7 @@ public final class Exam implements Comparable<Exam> {
      * @param startTime        start time
      * @param endTime          end time
      */
-    public Exam(String name, Course associatedCourse, Timestamp startTime, Timestamp endTime) {
+    private Exam(String name, Course associatedCourse, Timestamp startTime, Timestamp endTime) {
         this(name, associatedCourse, startTime, endTime, "");
     }
 
@@ -115,7 +115,7 @@ public final class Exam implements Comparable<Exam> {
      * @param startTime        start time
      * @param duration         duration
      */
-    public Exam(String name, Course associatedCourse, Timestamp startTime, Time duration) {
+    private Exam(String name, Course associatedCourse, Timestamp startTime, Time duration) {
         this(name, associatedCourse, startTime, duration, "");
     }
 

@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1.backend;
+package com.example.cs_2340_assignment_1.state;
 
 import com.example.cs_2340_assignment_1.data.Assignment;
 import com.example.cs_2340_assignment_1.data.Course;
