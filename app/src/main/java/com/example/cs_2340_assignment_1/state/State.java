@@ -51,7 +51,6 @@ public final class State {
     }
 
     // UPDATE
-
     /**
      * Updates state variables based on course map and lists.
      * Should be called when any creation, edit, or deletion is made.
