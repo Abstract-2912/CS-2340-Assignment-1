@@ -57,7 +57,7 @@ public final class State {
      * Should be called when any creation, edit, or deletion is made.
      *
      * @param courseMap course map
-     * @param todoLists lists
+     * @param lists lists
      */
     public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> lists) {
         if (State.courseMap != courseMap) {
