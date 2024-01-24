@@ -33,6 +33,7 @@ public class TodoList {
         } else if (name.isEmpty() || name.isBlank()) {
             throw new IllegalArgumentException("List name can not be empty!");
         }
+        this.name = name;
         this.todoListStructure = new PriorityQueue<>(todoListStructure);
     }
 
@@ -214,9 +215,10 @@ public class TodoList {
          */
         @Override
         public boolean equals(Object o) {
-            if (o instanceof TodoItem) {
-                var castedObj = (TodoItem) o;
-                return castedObj.name.equals(this.name) && castedObj.priority == this.priority && castedObj.dueDate.equals(dueDate);
+            if (o instanceof TodoItem obj) {
+                return obj.name.equals(this.name)
+                        && obj.priority == this.priority
+                        && obj.dueDate.equals(dueDate);
             }
             return false;
         }

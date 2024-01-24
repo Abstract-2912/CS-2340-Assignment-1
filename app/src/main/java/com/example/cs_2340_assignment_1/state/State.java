@@ -56,9 +56,9 @@ public final class State {
      * Should be called when any creation, edit, or deletion is made.
      *
      * @param courseMap course map
-     * @param lists lists
+     * @param todoLists lists
      */
-    public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> lists) {
+    public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> todoLists) {
         if (State.courseMap != courseMap) {
             setCourseMap(courseMap);
             assignmentsPriorityQueue.clear();
