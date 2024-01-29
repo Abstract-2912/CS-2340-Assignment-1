@@ -1,7 +1,7 @@
 # Tutorial
 
 The goal of this tutorial is to familiarize an individual with the basics of the Android Studio SDK
-and develop a simple application with multiple pages, buttons, and text.
+and develop a simple application with enabling multiple pages, buttons, notifications, and text.
 
 # Setup
 
