@@ -18,5 +18,5 @@ or similar or higher to mitigate compatibility issues. Additionally, select the 
 Language** to be 'Kotlin DSL (build.gradle.kts)', and hit **Finish**.
 
 Congratulations! You've just completed the setup for your first Android application!
-Click [**here**](https://github.com/Abstract-2912/CS-2340-Assignment-1/blob/main/tutorial/xml.md)
+Click [**here**](xml.md)
 for **next steps** or alternatively, navigate to the `xml.md` file in this repository.
