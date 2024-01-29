@@ -26,6 +26,10 @@ public final class State {
     private static HashMap<String, TodoList> todoLists = new HashMap<>();
 
     // METHODS
+    public static Factory getFactory() {
+        return factory;
+    }
+
     public static HashMap<String, Course> getCourseMap() {
         return courseMap;
     }
