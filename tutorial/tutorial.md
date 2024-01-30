@@ -22,5 +22,5 @@ Language** to be 'Kotlin DSL (build.gradle.kts)'.
 5. Hit **Finish**.
 
 Congratulations! You've just completed the setup for your first Android application!
-Click [**here**](xml.md)
-for **next steps** or alternatively, navigate to the `xml.md` file in this repository.
+Click [**here**](gradle.md)
+for **next steps** or alternatively, navigate to the `gradle.md` file in this repository.
