@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".FifthFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/courses_prev"
@@ -21,22 +21,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/view_assignments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view_assignments"
-            tools:layout_editor_absoluteX="249dp"
-            tools:layout_editor_absoluteY="54dp" />
-
-        <Button
-            android:id="@+id/view_exams"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/view_exams"
-            tools:layout_editor_absoluteX="106dp"
-            tools:layout_editor_absoluteY="38dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
