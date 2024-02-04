@@ -14,6 +14,16 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_fourthFragment2"
+            app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_sixthFragment2"
+            app:destination="@id/sixthFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_eigthFragment2"
+            app:destination="@id/eigthFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -22,22 +32,79 @@
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.example.cs_2340_assignment_1.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/fourthFragment"
         android:name="com.example.cs_2340_assignment_1.FourthFragment"
         android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" />
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_fourthFragment_to_fifthFragment"
+            app:destination="@id/fifthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fifthFragment"
         android:name="com.example.cs_2340_assignment_1.FifthFragment"
         android:label="fragment_fifth"
-        tools:layout="@layout/fragment_fifth" />
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifthFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sixthFragment"
+        android:name="com.example.cs_2340_assignment_1.SixthFragment"
+        android:label="fragment_sixth"
+        tools:layout="@layout/fragment_sixth" >
+        <action
+            android:id="@+id/action_sixthFragment_to_seventhFragment"
+            app:destination="@id/seventhFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seventhFragment"
+        android:name="com.example.cs_2340_assignment_1.SeventhFragment"
+        android:label="fragment_seventh"
+        tools:layout="@layout/fragment_seventh">
+        <action
+            android:id="@+id/action_seventhFragment_to_sixthFragment"
+            app:destination="@id/sixthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eigthFragment"
+        android:name="com.example.cs_2340_assignment_1.EigthFragment"
+        android:label="fragment_eight"
+        tools:layout="@layout/fragment_eigth" >
+        <action
+            android:id="@+id/action_eigthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_eigthFragment_to_ninthFragment"
+            app:destination="@id/ninthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ninthFragment"
+        android:name="com.example.cs_2340_assignment_1.FifthFragment"
+        android:label="fragment_ninth"
+        tools:layout="@layout/fragment_ninth" >
+        <action
+            android:id="@+id/action_ninthFragment_to_eigthFragment"
+            app:destination="@id/eigthFragment" />
+    </fragment>
 </navigation>

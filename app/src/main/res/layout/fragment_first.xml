@@ -7,38 +7,86 @@
     tools:context=".FirstFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
         <Button
-            android:id="@+id/courses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
+            android:id="@+id/bcourses"
+            android:layout_width="128dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="190dp"
             android:layout_marginBottom="250dp"
             android:text="@string/Courses"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/todolist"
-            android:layout_width="104dp"
-            android:layout_height="46dp"
+            android:id="@+id/btodolist"
+            android:layout_width="128dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
             android:text="@string/todolist"
-            tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="338dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bcourses" />
 
         <TextView
             android:id="@+id/WelcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Welcometext"
-            tools:layout_editor_absoluteX="114dp"
-            tools:layout_editor_absoluteY="57dp" />
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/bcourses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bassignments"
+            android:layout_width="128dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:text="Assignments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btodolist" />
+
+        <Button
+            android:id="@+id/bexams"
+            android:layout_width="128dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:text="Exams"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bassignments"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/WelcomeText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:navigationIcon="?android:attr/fingerprintAuthDrawable" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

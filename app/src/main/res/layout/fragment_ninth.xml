@@ -14,35 +14,19 @@
 
     <!-- EditText for getttaskEntrytask description input -->
     <EditText
-        android:id="@+id/editTextTaskDescription"
+        android:id="@+id/editToDoList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:hint="@string/courseDescription"
+        android:hint="@string/enterTask"
         android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-    <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
-    <EditText
-        android:id="@+id/editcourseInstructor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/instructor"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
-    <EditText
-        android:id="@+id/editcourseTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/courseDescription2"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-    <!-- RadioGroup for visible selection of a priority -->
 
 
     <!-- Add button -->
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/saveButtonToDo"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_main"
+        android:id="@+id/recycler_view_exams"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="42dp"
@@ -19,7 +19,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -34,14 +34,14 @@
         app:fabSize="mini" />
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+        android:id="@+id/materialToolbarExams"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:buttonGravity="top"
-        app:title="@string/Courses"
+        app:title="@string/Exams"
         app:titleCentered="true" />
 
 </RelativeLayout>

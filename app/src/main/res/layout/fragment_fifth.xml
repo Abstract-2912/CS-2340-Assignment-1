@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FifthFragment">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/courses_prev"
+    <!-- EditText for getttaskEntrytask description input -->
+    <EditText
+        android:id="@+id/editAssignmentDescription"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="@string/assignmentDescription"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="@string/previous"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
+    <EditText
+        android:id="@+id/editAssignmentDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="@string/assignmentDueDate"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+    <EditText
+        android:id="@+id/editAsspociatedCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="@string/assignmentAssociatedClass"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    <!-- RadioGroup for visible selection of a priority -->
+
+
+    <!-- Add button -->
+    <Button
+        android:id="@+id/saveButtonAssignments"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:text="@string/add_button"
+        android:textColor="@android:color/primary_text_dark" />
+
+
+</LinearLayout>
