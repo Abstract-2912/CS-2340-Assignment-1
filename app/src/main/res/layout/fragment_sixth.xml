@@ -9,9 +9,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_exams"
+        android:shape="rectangle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="60dp"
         android:background="#EFF4F4">
 
 

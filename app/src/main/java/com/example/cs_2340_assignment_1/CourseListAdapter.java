@@ -93,6 +93,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Co
         TextView courseInstructor;
         TextView courseTime;
 
+
         public CourseViewHolder(View itemView) {
             super(itemView);
             courseName = itemView.findViewById(R.id.taskDescription);

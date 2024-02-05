@@ -4,60 +4,103 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TimePicker;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.cs_2340_assignment_1.data.Course;
+import com.example.cs_2340_assignment_1.data.Exam;
+import com.example.cs_2340_assignment_1.databinding.FragmentSeventhBinding;
+import com.example.cs_2340_assignment_1.databinding.FragmentThirdBinding;
+import com.example.cs_2340_assignment_1.state.State;
+
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SeventhFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class SeventhFragment extends Fragment {
+    private FragmentSeventhBinding binding;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    @Override
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+        binding = FragmentSeventhBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
-    public SeventhFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SeventhFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SeventhFragment newInstance(String param1, String param2) {
-        SeventhFragment fragment = new SeventhFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ExamListAdapter examListAdapter = new ExamListAdapter(getContext());
+        Button buttonAdd = getActivity().findViewById(R.id.saveButtonExams);
+        EditText examName = getActivity().findViewById(R.id.examName);
+        EditText courseName = getActivity().findViewById(R.id.courseName);
+        TimePicker examTime = getActivity().findViewById(R.id.examTime);
+        DatePicker examDate = getActivity().findViewById(R.id.examDate);
+        EditText examLocation = getActivity().findViewById(R.id.examLocation);
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String eName = examName.getText().toString().trim();
+                String cName = courseName.getText().toString().trim();
+                String eLoc = examLocation.getText().toString().trim();
+                Timestamp eTime = new Timestamp(
+                        examDate.getYear(),
+                        examDate.getMonth(),
+                        examDate.getDayOfMonth(),
+                        examTime.getHour(),
+                        examTime.getMinute(),
+                        0,
+                        0
+                    );
+
+                Exam e = State.getFactory().createExam(
+                        eName,
+                        State.getCourseMap().get(cName),
+                        eTime, new Timestamp(0),
+                        eLoc
+                );
+                Course c = State.getCourseMap().get(cName);
+                if (c != null) {
+                    c.removeExam(e);
+                }
+
+                examListAdapter.setTasks(State.getExamsPriorityQueue());
+                NavHostFragment.findNavController(SeventhFragment.this)
+                        .navigate(R.id.action_seventhFragment_to_sixthFragment);
+
+
+            }
+
+        });
+
+
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onResume() {
+        super.onResume();
+        ExamListAdapter examListAdapter = new ExamListAdapter(getContext());
+        examListAdapter.setTasks(State.getExamsPriorityQueue());
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seventh, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
+
 }

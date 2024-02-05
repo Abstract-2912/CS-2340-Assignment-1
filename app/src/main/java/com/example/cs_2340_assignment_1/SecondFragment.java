@@ -23,7 +23,7 @@ import java.util.List;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    CourseListAdapter courseListAdapter;
+    private CourseListAdapter courseListAdapter;
 
     @Override
     public View onCreateView(

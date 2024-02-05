@@ -63,21 +63,18 @@ public final class State {
      * @param todoLists lists
      */
     public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> todoLists) {
-        if (State.courseMap != courseMap) {
-            setCourseMap(courseMap);
-            assignmentsPriorityQueue.clear();
-            examsPriorityQueue.clear();
+        setCourseMap(courseMap);
+        assignmentsPriorityQueue.clear();
+        examsPriorityQueue.clear();
 
-            for (String key : courseMap.keySet()) {
-                Course c = courseMap.get(key);
-                if (c != null) {
-                    assignmentsPriorityQueue.addAll(c.getAssignments());
-                    examsPriorityQueue.addAll(c.getExams());
-                }
+        for (String key : courseMap.keySet()) {
+            Course c = courseMap.get(key);
+            if (c != null) {
+                assignmentsPriorityQueue.addAll(c.getAssignments());
+                examsPriorityQueue.addAll(c.getExams());
             }
         }
-        if (State.todoLists != todoLists) {
-            setTodoLists(todoLists);
-        }
+
+        setTodoLists(todoLists);
     }
 }

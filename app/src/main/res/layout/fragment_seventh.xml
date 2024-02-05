@@ -14,7 +14,15 @@
 
     <!-- EditText for getttaskEntrytask description input -->
     <EditText
-        android:id="@+id/editExamDescription"
+        android:id="@+id/courseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="Enter Course Name"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+    <EditText
+        android:id="@+id/examName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
@@ -22,30 +30,24 @@
         android:paddingBottom="@dimen/activity_horizontal_margin" />
 
     <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
-    <EditText
-        android:id="@+id/editExamTime"
-        android:layout_width="match_parent"
+    <TimePicker
+        android:id="@+id/examTime"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/examTime"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
-    <EditText
-        android:id="@+id/editExamDate"
-        android:layout_width="match_parent"
+        android:timePickerMode="spinner" />
+    <DatePicker
+        android:id="@+id/examDate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/examDate"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
     <EditText
-        android:id="@+id/editExamLocation"
+        android:id="@+id/examLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
         android:hint="@string/examLocation"
         android:paddingBottom="@dimen/activity_horizontal_margin" />
-
-
-
 
     <!-- Add button -->
     <Button

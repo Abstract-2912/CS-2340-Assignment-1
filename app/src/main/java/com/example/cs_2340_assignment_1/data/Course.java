@@ -197,6 +197,31 @@ public final class Course {
     }
 
     /**
+     * Removes an exam from the exams priority queue.
+     *
+     * @param s String
+     * @return action success value
+     */
+    public boolean removeExam(String s) {
+        Exam exam = null;
+        boolean pass = false;
+        for (Exam e: exams) {
+            if (e.getName().trim().equals(s.trim())) {
+                pass = true;
+                exam = e;
+                break;
+            }
+        }
+        if (pass) {
+            return removeExam(exam);
+        } else {
+            throw new IllegalArgumentException(
+                    "Exam is not associated with class! Unable to remove it."
+            );
+        }
+    }
+
+    /**
      * Returns the name of the course.
      *
      * @return course name
