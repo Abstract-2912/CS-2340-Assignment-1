@@ -20,7 +20,7 @@ import java.util.List;
  * @see Exam
  * @see TodoList
  */
-final class Factory {
+public final class Factory {
 
     /**
      * Creates a course with parameters.
@@ -30,10 +30,10 @@ final class Factory {
      * @param courseTimes    course times
      * @param notes          notes
      */
-    public void createCourse(
+    public Course createCourse(
             String name,
             String instructorName,
-            List<Timestamp[]> courseTimes,
+            List<String> courseTimes,
             String notes
     ) {
         Course c = new Course(name, instructorName, courseTimes, notes);
@@ -46,6 +46,7 @@ final class Factory {
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
         }
+        return c;
     }
 
     /**
@@ -55,8 +56,8 @@ final class Factory {
      * @param instructorName instructor name
      * @param courseTimes    course times
      */
-    public void createCourse(String name, String instructorName, List<Timestamp[]> courseTimes) {
-        createCourse(name, instructorName, courseTimes, "");
+    public Course createCourse(String name, String instructorName, List<String> courseTimes) {
+        return createCourse(name, instructorName, courseTimes, "");
     }
 
     /**
@@ -65,8 +66,8 @@ final class Factory {
      * @param name           name
      * @param instructorName instructor name
      */
-    public void createCourse(String name, String instructorName) { // not recommended
-        createCourse(name, instructorName, new ArrayList<>());
+    public Course createCourse(String name, String instructorName) { // not recommended
+        return createCourse(name, instructorName, new ArrayList<>());
     }
 
     /**
@@ -74,8 +75,8 @@ final class Factory {
      *
      * @param name name
      */
-    public void createCourse(String name) { // not recommended
-        createCourse(name, "");
+    public Course createCourse(String name) { // not recommended
+        return createCourse(name, "");
     }
 
     /**

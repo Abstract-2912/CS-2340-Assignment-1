@@ -19,6 +19,10 @@ public final class State {
      */
     private static final Factory factory = new Factory();
 
+    public static Factory getFactory() {
+        return factory;
+    }
+
     // STATE FIELDS
     private static HashMap<String, Course> courseMap = new HashMap<>();
     private static final PriorityQueue<Assignment> assignmentsPriorityQueue = new PriorityQueue<>();
@@ -42,11 +46,11 @@ public final class State {
         return todoLists;
     }
 
-    private static void setCourseMap(HashMap<String, Course> map) {
+    public static void setCourseMap(HashMap<String, Course> map) {
         courseMap = map;
     }
 
-    private static void setTodoLists(HashMap<String, TodoList> lists) {
+    public static void setTodoLists(HashMap<String, TodoList> lists) {
         todoLists = lists;
     }
 

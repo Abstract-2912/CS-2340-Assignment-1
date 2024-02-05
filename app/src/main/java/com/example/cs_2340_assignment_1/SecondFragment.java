@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.databinding.FragmentSecondBinding;
+import com.example.cs_2340_assignment_1.state.State;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class SecondFragment extends Fragment {
@@ -26,7 +29,7 @@ public class SecondFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
+        courseListAdapter = new CourseListAdapter(getContext());
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -39,8 +42,6 @@ public class SecondFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
         recyclerView.setLayoutManager(layoutManager);
-
-        courseListAdapter = new CourseListAdapter(getContext());
 
         recyclerView.setAdapter(courseListAdapter);
         appDataBase = AppDataBase.getsInstance(getContext());
@@ -74,15 +75,14 @@ public class SecondFragment extends Fragment {
 
                 // get list of Task
 
-                final List<Constants> tasks = courseListAdapter.getTasks();
+                final List<Course> tasks = courseListAdapter.getTasks();
 
                 AppExecutor.getInstance().diskIO().execute(new Runnable() {
 
                     @Override
                     public void run() {
-
-                        appDataBase.taskDao().deleteTask(tasks.get(position));
-
+                        State.getCourseMap().remove(tasks.get(position).getName());
+//                        courseListAdapter.setTasks(State.getCourseMap());
                     }
 
                 });
@@ -102,14 +102,13 @@ public class SecondFragment extends Fragment {
 
             public void run() {
 
-                final List<Constants> tasks = appDataBase.taskDao().loadAllTask();
+                final HashMap<String, Course> tasks = State.getCourseMap();
 
 
                 getActivity().runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
-
                         courseListAdapter.setTasks(tasks);
                     }
                 });
@@ -122,7 +121,7 @@ public class SecondFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        courseListAdapter.setTasks(appDataBase.taskDao().loadAllTask());
+        courseListAdapter.setTasks(State.getCourseMap());
     }
     @Override
     public void onDestroyView() {

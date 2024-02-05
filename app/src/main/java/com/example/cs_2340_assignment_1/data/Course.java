@@ -29,7 +29,7 @@ public final class Course {
      * First value of each list entry array denotes starting timestamp.
      * Second value of each list entry array denotes ending timestamp.
      */
-    private List<Timestamp[]> courseTimes;
+    private List<String> courseTimes;
 
     /**
      * PriorityQueue of assignments associated with this course.
@@ -60,7 +60,7 @@ public final class Course {
     private Course(
             String name,
             String instructorName,
-            List<Timestamp[]> courseTimes,
+            List<String> courseTimes,
             PriorityQueue<Assignment> assignments,
             PriorityQueue<Exam> exams,
             String notes
@@ -82,7 +82,7 @@ public final class Course {
      * @param notes          course notes
      * @see Course
      */
-    public Course(String name, String instructorName, List<Timestamp[]> courseTimes, String notes) {
+    public Course(String name, String instructorName, List<String> courseTimes, String notes) {
         this(name,
                 instructorName,
                 courseTimes,
@@ -100,7 +100,7 @@ public final class Course {
      * @param courseTimes    course times
      * @see Course
      */
-    private Course(String name, String instructorName, List<Timestamp[]> courseTimes) {
+    private Course(String name, String instructorName, List<String> courseTimes) {
         this(name, instructorName, courseTimes, "");
     }
 
@@ -247,7 +247,7 @@ public final class Course {
      *
      * @return course times
      */
-    public List<Timestamp[]> getCourseTimes() {
+    public List<String> getCourseTimes() {
         return courseTimes;
     }
 
@@ -256,7 +256,7 @@ public final class Course {
      *
      * @param courseTimes course times (list of timestamps)
      */
-    public void setCourseTimes(List<Timestamp[]> courseTimes) {
+    public void setCourseTimes(List<String> courseTimes) {
         if (courseTimes == null) {
             throw new NullPointerException("Course times can not be null!");
         }
