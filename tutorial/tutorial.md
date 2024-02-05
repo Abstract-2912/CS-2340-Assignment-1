@@ -20,10 +20,10 @@ To install, download [Android Studio](https://developer.android.com/studio) for 
 1. From this [page](https://developer.android.com/studio), click on the ***Download Android Studio button***.
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/b8e3370e-59b4-493d-a468-b6c2b637d7d4" width="30%" height="30%"> </p>
 
-3. Click on the "I have read and agree with the above terms and conditions" checkbox followed by the download button.
+2. Click on the "I have read and agree with the above terms and conditions" checkbox followed by the download button.
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/blob/tutorials/tutorial/Screenshot%202024-02-04%20125219.png" width="50%" height="30%"> </p>
    
-5. Open and run the downloaded file. It will prompt the following dialog that is the setup wizard. Click on next and follow the prompts from the setup wizard until you reach the **Finish** button.
+3. Open and run the downloaded file. It will prompt the following dialog that is the setup wizard. Click on next and follow the prompts from the setup wizard until you reach the **Finish** button.
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/blob/tutorials/tutorial/Screenshot%202024-02-04%20131534.png" width="30%" height="30%"> </p>
 
 >[!NOTE]
