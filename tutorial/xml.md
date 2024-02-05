@@ -64,6 +64,44 @@ This panel shows the view hierarchy in your layout, that is, how the views are a
   </p>
 </figure>
 
+### Code Editor
+In the code editor, we can change property values, text display properties, add color resources and more!
+
+<details> <summary> Changing property values </summary>
+
+1. Take a look at the `Text View` element in the code editor.
+```angular2html
+<TextView
+    android:id="@+id/textview_first"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="@string/lorem_ipsum"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/button_first" />
+```
+2. Hover over the string in the **text** property. It will refer to an (absurdly long) string resource, `lorem_ipsum`.
+Right-click on the property and click **Go To** > **Declaration and Usages**.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/9f19710a-914b-4dd4-aa5f-ebe17594d833" width="60%" height="60%"></p>
+
+3. The `strings.xml` should open from the **res** > **values** directory with the full string highlighted.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/1ccb77c7-97dd-4eb8-b138-33b68ef324a9" width="60%" height="60%"></p>
+
+4. Change the value of the **string** property to `"Hello World!`.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/1d8368a7-927d-4c5e-8a6c-3c939e6a4d86" width="30%" height="30%"></p>
+
+5. Navigate back to the `fragment_first.xml` file and select `textview_first` in the **Component Tree**.
+Look at **Attributes** panel on the right and open the **Declared Attributes** section. In the **text** field,
+notice it still refers to the original string resource `@string/lorem_ipsum`.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/58f6b537-976d-4ef6-a533-e865b21b4208" width="50%" height="50%"></p>
+
+> [!NOTE]
+> Having the strings in a resource file has several advantages. You can change the value of string without having to change any other code. This simplifies translating your app to other languages, because your translators don't have to know anything about the app code.
+
+6. Run the app to see the text changes you have made in `string.xml`. It should now show "Hello World!".
+
 Congratulations! You've designed the user interface your first application!
 Click [**here**](actions.md)
 for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you
