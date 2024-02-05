@@ -38,10 +38,9 @@ public final class Factory {
     ) {
         Course c = new Course(name, instructorName, courseTimes, notes);
         var courseMap = State.getCourseMap();
-        if (courseMap.containsKey(c.getName())) {
-            throw new IllegalArgumentException(
-                    "Course with name already exists! Course can not be created!"
-            );
+        if (courseMap.containsKey(c.getName())) { // edit a course
+            courseMap.put(c.getName(), c);
+            State.update(courseMap, State.getTodoLists());
         } else {
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
