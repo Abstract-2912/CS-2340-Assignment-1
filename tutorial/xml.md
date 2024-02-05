@@ -3,6 +3,7 @@ Generally, each screen in your Android app is associated with one or more _fragm
 
 <details> <summary> More Information on Fragment Lifecycle</summary>
 
+
 The lifecycle of android fragment is like the activity lifecycle. There are 12 lifecycle methods for fragment:
 
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/0b740d85-ab4b-4d12-b004-33b2ec4058a7" width="50%" height="90%"></p>
