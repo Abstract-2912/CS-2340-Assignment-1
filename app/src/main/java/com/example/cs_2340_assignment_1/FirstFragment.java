@@ -37,26 +37,22 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
-
         binding.btodolist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_eigthFragment);
+                        .navigate(R.id.action_FirstFragment_to_eigthFragment2);
             }
         });
-        binding.bassignments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_fourthFragment);
-            }
+        binding.bassignments.setOnClickListener(e -> {
+            NavHostFragment.findNavController(FirstFragment.this)
+                    .navigate(R.id.action_FirstFragment_to_fourthFragment2);
         });
         binding.bexams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_sixthFragment);
+                        .navigate(R.id.action_FirstFragment_to_sixthFragment2);
             }
         });
     }
