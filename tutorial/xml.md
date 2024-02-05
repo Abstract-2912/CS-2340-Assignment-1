@@ -43,11 +43,10 @@ Depending on your screen size and work style, you may prefer a specific setup th
 easier for you to look at.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/22b25739-6751-49e1-902f-55f3f3e8b6fd" width="50%" height="50%"></p>
 
-1.  At the lower right of the Design editor you may use the **+** and **-** buttons to 
+1.  At the lower right of the **Design Editor** you may use the **+** and **-** buttons to 
 adjust the size of what you see, or click the **zoom-to-fit** button so that both panels fit on your screen.
-2. The Design layout on the left shows how your app appears on the device. 
-The Blueprint layout, shown on the right, is a schematic view of the layout.
-3. Use the **orientation** icon (below &darr;) to change the orientation of the layout. This allows you to 
+2. The _Design Layout_ on the left shows how your app appears on the device. The _Blueprint layout_, shown on the right, is a schematic view of the layout.
+3. Use the **orientation** icon (image below &darr;) to change the orientation of the layout. This allows you to 
 test how your layout will fit portrait and landscape modes.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/20c8db08-1ebe-4d0c-891a-48134f440339" width="20%" height="20%"></p>
 
