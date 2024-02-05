@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,6 +38,12 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_main);
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(
+                        recyclerView.getContext(),
+                        DividerItemDecoration.VERTICAL
+                )
+        );
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
