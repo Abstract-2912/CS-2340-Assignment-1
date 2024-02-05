@@ -4,7 +4,7 @@
 
 In this tutorial, you'll learn how to build and run your first app in Android Studio using the programming language Java.
 
-##### *Objectives*:
+#### *Objectives*:
 * Familiarize an individual with the basics of the Android Studio SDK
 * Develop a simple application that contains with the following features:
   - Multiple pages
@@ -18,25 +18,24 @@ _Let's get started!_
 
 To install, download [Android Studio](https://developer.android.com/studio)
 for your machine. 
-> *Note*: It is [recommended](https://developer.android.com/studio/install.html) 
-> that your system is equipped with 16GB of RAM and 16GB of storage to run the 
-> android emulators and develop an application. However, the emulator can be 
-> skipped and a physical device may be used. For more information, click 
-> [here](https://developer.android.com/studio/run/device).
-
 1. From this [page](https://developer.android.com/studio), click on the 
 ***Download Android Studio button***. ![Screenshot of download button to click on](img.png)
 
-
 2. Click on the "I have read and agree with the above terms and conditions" 
 checkbox followed by the download button. ![Screenshot of checkbox for agreement](img_1.png)
-
 
 3. Open and run the downloaded file. It will prompt the following<sup>1</sup> dialog that
 is the setup wizard. Click on next and follow the prompts from the setup wizard 
 until you reach the **Finish**<sup>2</sup> button. 
 ![Screenshot of Android Studio setup wizard](img_3.png)
 ![img_2.png](img_2.png)
+
+>[!NOTE]
+> It is [recommended](https://developer.android.com/studio/install.html) 
+> that your system is equipped with 16GB of RAM and 16GB of storage to run the 
+> android emulators and develop an application. However, the emulator can be 
+> skipped and a physical device may be used. For more information, click 
+> [here](https://developer.android.com/studio/run/device).
 
 _You are ready to create your first project!_
 
