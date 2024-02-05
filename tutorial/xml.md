@@ -30,6 +30,17 @@ where you can create and define layouts. To navigate to this layout editor, open
 (**app** > **res** > **layout**) in the **Project** panel. Then, click on `fragment_first.xml`.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/0c5cdca2-4360-4f4c-a485-86b62f781fc3" width="30% "height="30%"></p>
 
+The panels to the right of the Project view make up the _Layout Editor_.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/3783019c-b037-40aa-9752-1340da9b141c" width="60%" height="60%">
+
+1) The **_Palette_** has views you can add to your app
+2) The **_Component Tree_** shows the views currently in this file, and how they are arranged in relation to each other.
+3) The **_Design Editor_** shows a visual representation of what the contents of the file will look like when compiled 
+into an Android app. You can view the visual representation, the XML code, or both.
+4) The **_Attributes_** panel has three buttons representing the **Code** (code only), **Split** (both code and design),
+and **Design** (design only) views. It is currently set on the **Design** view.
+
+
 Congratulations! You've designed the user interface your first application!
 Click [**here**](actions.md)
 for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you
