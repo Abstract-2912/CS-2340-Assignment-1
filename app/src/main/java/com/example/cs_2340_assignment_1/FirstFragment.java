@@ -1,5 +1,6 @@
 package com.example.cs_2340_assignment_1;
 
+import android.health.connect.datatypes.HeightRecord;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,12 +59,6 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_sixthFragment);
             }
         });
-
-
-
-
-
-
     }
 
     @Override

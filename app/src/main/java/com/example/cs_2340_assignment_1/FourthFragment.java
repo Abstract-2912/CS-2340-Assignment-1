@@ -50,7 +50,7 @@ public class FourthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_thirdFragment);
+                        .navigate(R.id.action_fourthFragment_to_FirstFragment);
             }
         });
     }

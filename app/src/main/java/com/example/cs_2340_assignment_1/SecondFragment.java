@@ -22,7 +22,6 @@ import java.util.List;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    AppDataBase appDataBase;
     CourseListAdapter courseListAdapter;
     @Override
     public View onCreateView(
@@ -44,7 +43,6 @@ public class SecondFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         recyclerView.setAdapter(courseListAdapter);
-        appDataBase = AppDataBase.getsInstance(getContext());
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

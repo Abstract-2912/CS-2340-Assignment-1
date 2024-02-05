@@ -88,7 +88,7 @@ public final class Factory {
      * @param dueDate          due date
      * @param notes            notes
      */
-    public void createAssignment(
+    public Assignment createAssignment(
             String title,
             Course associatedCourse,
             Timestamp assignedDate,
@@ -111,6 +111,7 @@ public final class Factory {
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
         }
+        return a;
     }
 
     /**
@@ -121,13 +122,13 @@ public final class Factory {
      * @param dueDate          due date
      * @param notes            notes
      */
-    public void createAssignment(
+    public Assignment createAssignment(
             String title,
             Course associatedCourse,
             Timestamp dueDate,
             String notes
     ) {
-        createAssignment(title, associatedCourse, null, dueDate, notes);
+        return createAssignment(title, associatedCourse, null, dueDate, notes);
     }
 
     /**
@@ -137,8 +138,8 @@ public final class Factory {
      * @param associatedCourse associated course
      * @param dueDate          due date
      */
-    public void createAssignment(String title, Course associatedCourse, Timestamp dueDate) {
-        createAssignment(title, associatedCourse, dueDate, "");
+    public Assignment createAssignment(String title, Course associatedCourse, Timestamp dueDate) {
+        return createAssignment(title, associatedCourse, dueDate, "");
     }
 
     /**
@@ -150,7 +151,7 @@ public final class Factory {
      * @param endTime          end time
      * @param notes            notes
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
@@ -167,6 +168,7 @@ public final class Factory {
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
         }
+        return e;
     }
 
     /**
@@ -177,13 +179,13 @@ public final class Factory {
      * @param startTime        start time
      * @param endTime          end time
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
             Timestamp endTime
     ) {
-        createExam(name, associatedCourse, startTime, endTime, "");
+        return createExam(name, associatedCourse, startTime, endTime, "");
     }
 
     /**
@@ -195,7 +197,7 @@ public final class Factory {
      * @param duration         duration
      * @param notes            notes
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
@@ -212,6 +214,7 @@ public final class Factory {
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
         }
+        return e;
     }
 
     /**
@@ -222,13 +225,13 @@ public final class Factory {
      * @param startTime        start time
      * @param duration         duration
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
             Time duration
     ) {
-        createExam(name, associatedCourse, startTime, duration, "");
+        return createExam(name, associatedCourse, startTime, duration, "");
     }
 
     /**
@@ -236,7 +239,7 @@ public final class Factory {
      *
      * @param name name of list
      */
-    public void createTodoList(
+    public TodoList createTodoList(
             String name
     ) {
         if (State.getTodoLists().containsKey(name)) {
@@ -248,6 +251,7 @@ public final class Factory {
             var lists = State.getTodoLists();
             lists.put(name, list);
             State.update(State.getCourseMap(), lists);
+            return list;
         }
     }
 
@@ -260,7 +264,7 @@ public final class Factory {
      * @param dueDate  due date
      * @param notes    notes
      */
-    public void createTodoListItem(
+    public TodoList createTodoListItem(
             TodoList list,
             String name,
             int priority,
@@ -276,5 +280,6 @@ public final class Factory {
             lists.put(list.getName(), list);
         }
         State.update(State.getCourseMap(), State.getTodoLists());
+        return list;
     }
 }
