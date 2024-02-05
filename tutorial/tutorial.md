@@ -22,7 +22,7 @@ for your machine.
 ***Download Android Studio button***. ![Screenshot of download button to click on](img.png)
 
 2. Click on the "I have read and agree with the above terms and conditions" 
-checkbox followed by the download button. ![Screenshot of checkbox for agreement](img_1.png)
+checkbox followed by the download button. ![Screenshot of checkbox for agreement](https://github.com/Abstract-2912/CS-2340-Assignment-1/blob/tutorials/tutorial/Screenshot%202024-02-04%20125219.png)
 
 3. Open and run the downloaded file. It will prompt the following<sup>1</sup> dialog that
 is the setup wizard. Click on next and follow the prompts from the setup wizard 
