@@ -9,18 +9,21 @@ public class AppExecutor {
     private static final Object LOCK = new Object();
     private static AppExecutor sInstance;
     private final Executor diskIO;
+
     private AppExecutor(Executor diskIO) {
 
         this.diskIO = diskIO;
 
     }
-    public static AppExecutor getInstance(){
+
+    public static AppExecutor getInstance() {
 
         if (sInstance == null) {
 
-            synchronized (LOCK){
+            synchronized (LOCK) {
 
-                sInstance = new AppExecutor(Executors.newSingleThreadExecutor());           }
+                sInstance = new AppExecutor(Executors.newSingleThreadExecutor());
+            }
 
         }
 

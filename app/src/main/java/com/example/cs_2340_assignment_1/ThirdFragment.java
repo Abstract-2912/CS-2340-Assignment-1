@@ -10,12 +10,9 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.databinding.FragmentThirdBinding;
-import com.example.cs_2340_assignment_1.state.Factory;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.ArrayList;
@@ -45,7 +42,7 @@ public class ThirdFragment extends Fragment {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name =  etTask.getText().toString().trim();
+                String name = etTask.getText().toString().trim();
                 String instructorName = courseInstructor.getText().toString().trim();
                 String cCourseTime = courseTime.getText().toString().trim();
 
@@ -72,6 +69,7 @@ public class ThirdFragment extends Fragment {
 
 
     }
+
     @Override
     public void onResume() {
         super.onResume();

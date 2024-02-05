@@ -10,9 +10,10 @@ public class Utils {
 
     /**
      * Converts a priority queue to an ordered array list
+     *
      * @param priorityQueue priority queue
+     * @param <T>           type parameter
      * @return array list
-     * @param <T> type parameter
      */
     public static <T> ArrayList<T> priorityQueueToArrayList(PriorityQueue<T> priorityQueue) {
         PriorityQueue<T> pq = new PriorityQueue<>(priorityQueue);

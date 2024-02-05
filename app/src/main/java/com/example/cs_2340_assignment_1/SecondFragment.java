@@ -24,6 +24,7 @@ public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
     CourseListAdapter courseListAdapter;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -32,7 +33,6 @@ public class SecondFragment extends Fragment {
         courseListAdapter = new CourseListAdapter(getContext());
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -77,7 +77,6 @@ public class SecondFragment extends Fragment {
                 final int position = viewHolder.getAbsoluteAdapterPosition();
 
 
-
                 // get list of Task
 
                 final List<Course> tasks = courseListAdapter.getTasks();
@@ -97,9 +96,8 @@ public class SecondFragment extends Fragment {
             }
 
         }).attachToRecyclerView(recyclerView);
-
-
     }
+
     private void getTasks() {
 
         AppExecutor.getInstance().diskIO().execute(new Runnable() {
@@ -117,17 +115,16 @@ public class SecondFragment extends Fragment {
                         courseListAdapter.setTasks(tasks);
                     }
                 });
-
             }
-
         });
-
     }
+
     @Override
     public void onResume() {
         super.onResume();
         courseListAdapter.setTasks(State.getCourseMap());
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

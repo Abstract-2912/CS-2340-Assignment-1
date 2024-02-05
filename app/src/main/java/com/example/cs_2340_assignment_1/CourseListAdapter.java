@@ -68,6 +68,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Co
 
         return mCourseEntries.size();
     }
+
     /**
      * When data changes, this method updates the list of taskEntries
      * and notifies the adapter to use the new values on it
@@ -79,17 +80,19 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Co
 
     public List<Course> getTasks() {
         List<Course> tasks = new ArrayList<>();
-        for (var k: State.getCourseMap().keySet()) {
+        for (var k : State.getCourseMap().keySet()) {
             tasks.add(State.getCourseMap().get(k));
         }
         return tasks;
     }
+
     // Inner class for creating ViewHolders
     public static class CourseViewHolder extends RecyclerView.ViewHolder {
         // Class variables for the task description and priority TextViews
         TextView courseName;
         TextView courseInstructor;
         TextView courseTime;
+
         public CourseViewHolder(View itemView) {
             super(itemView);
             courseName = itemView.findViewById(R.id.taskDescription);
