@@ -2,11 +2,8 @@
 Generally, each screen in your Android app is associated with one or more _fragments_, or sub-activity that represents a reusable portion of your app's UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events, BUT they can't live on their own. They must be hosted by, or embedded in, an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy. 
 
 <details> <summary> More Information on Fragment Lifecycle</summary>
-
-
-The lifecycle of android fragment is like the activity lifecycle. There are 12 lifecycle methods for fragment:
-
-<p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/0b740d85-ab4b-4d12-b004-33b2ec4058a7" width="50%" height="90%"></p>
+<p></p>
+The lifecycle of a fragment is like the activity lifecycle. There are 12 lifecycle methods for fragments:
 
 |                     Method                      | Description                                                                                                |
 |:-----------------------------------------------:|:-----------------------------------------------------------------------------------------------------------|
@@ -22,7 +19,7 @@ The lifecycle of android fragment is like the activity lifecycle. There are 12 l
 |                 onDestroyView()                 | Allows the fragment to clean up resources.                                                                 |
 |                   onDestroy()                   | Allows the fragment to do final clean up of fragment state.                                                |
 |                   onDetach()                    | Called immediately prior to the fragment no longer being associated with its activity.                     |
-
+<p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/0b740d85-ab4b-4d12-b004-33b2ec4058a7" width="30%" height="70%"></p>
 
 </details>
 
