@@ -54,13 +54,11 @@ Depending on your screen size and work style, you may prefer a specific setup th
 
 ### Component Tree
 This panel shows the view hierarchy in your layout, that is, how the views are arranged in relation to each other. Every layout must have a _root view_ that contains all the other views. The root view is always a _view group_, which is a view that contains other views. Notice that the root of the view hierarchy is a `ConstraintLayout` view.
-
-<figure>
-  <p align="center">
+<p align="center">
   <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/c16a702f-5cd6-4aaf-8da6-ece435e3edbf" width="20%" height="10%">  
-  <figcaption align="center"> Notice that the ConstraintLayout contains a TextView, called textview_first and a Button, called button_first. </figcaption>
-  </p>
-</figure>
+</p>
+
+> Notice that the **_ConstraintLayout_** contains a **TextView**, called `textview_first` and a **Button**, called `button_first`.
 
 <br>
 
@@ -171,7 +169,7 @@ So far you have learned how to change property values. Next, you will learn how 
 4. Find the property `android:textColor` (which was referred to in the previoius section) and give it the value **@android:color/white**. 
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/1cec2d56-6a79-4fd7-a406-872e7e9dbae2" width="50%" height="50%"></p>
 
-> [!NOTE]
+> #### _Did you know?_
 > The Android framework defines a range of colors, including white, so you don't have to define white yourself.
 
 <br>
@@ -192,10 +190,8 @@ A _Color_ can be defined as 3 hexadecimal numbers (#00-#FF, or 0-255) representi
 
 > [!NOTE]
 > A color can also be defined including an _alpha value_ (#00-#FF), which is a measure of transparency:  _(#00 = 0% = fully transparent, #FF = 100% = fully opaque)_.
-> 
-> _Examples_:
-> - #88FFEE58 makes the color semi-transparent. 
-> - If you use #00FFEE58, it's fully transparent and disappears from the left-hand bar.
+>> - #88FFEE58 makes the color semi-transparent. 
+>> - If you use #00FFEE58, it's fully transparent and disappears from the left-hand bar.
 
 <br>
 
