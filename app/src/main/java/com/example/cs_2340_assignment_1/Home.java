@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.cs_2340_assignment_1.databinding.FragmentFirstBinding;
+import com.example.cs_2340_assignment_1.databinding.HomeFragmentBinding;
 
 public class Home extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private HomeFragmentBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class Home extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = HomeFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

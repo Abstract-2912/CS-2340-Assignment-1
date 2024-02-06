@@ -15,7 +15,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.Exam;
-import com.example.cs_2340_assignment_1.databinding.FragmentSeventhBinding;
+import com.example.cs_2340_assignment_1.databinding.ExamAddFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.sql.Timestamp;
@@ -24,7 +24,7 @@ import java.sql.Timestamp;
  * A simple {@link Fragment} subclass.
  */
 public class ExamAdd extends Fragment {
-    private FragmentSeventhBinding binding;
+    private ExamAddFragmentBinding binding;
 
     @Override
     public View onCreateView(
@@ -32,7 +32,7 @@ public class ExamAdd extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSeventhBinding.inflate(inflater, container, false);
+        binding = ExamAddFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

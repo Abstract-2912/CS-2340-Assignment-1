@@ -12,14 +12,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.databinding.FragmentThirdBinding;
+import com.example.cs_2340_assignment_1.databinding.CourseAddFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CourseAdd extends Fragment {
-    private FragmentThirdBinding binding;
+    private CourseAddFragmentBinding binding;
 
     @Override
     public View onCreateView(
@@ -27,7 +27,7 @@ public class CourseAdd extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentThirdBinding.inflate(inflater, container, false);
+        binding = CourseAddFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

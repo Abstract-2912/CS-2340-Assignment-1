@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.data.Assignment;
-import com.example.cs_2340_assignment_1.databinding.FragmentFifthBinding;
+import com.example.cs_2340_assignment_1.databinding.AssignmentAddFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.sql.Timestamp;
@@ -23,14 +23,14 @@ import java.sql.Timestamp;
  * A simple {@link Fragment} subclass.
  */
 public class AssignmentAdd extends Fragment {
-    private FragmentFifthBinding binding;
+    private AssignmentAddFragmentBinding binding;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentFifthBinding.inflate(inflater, container, false);
+        binding = AssignmentAddFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

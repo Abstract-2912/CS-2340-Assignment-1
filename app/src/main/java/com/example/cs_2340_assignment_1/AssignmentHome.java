@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Assignment;
 import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.databinding.FragmentFourthBinding;
+import com.example.cs_2340_assignment_1.databinding.AssignmentFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.HashMap;
@@ -23,7 +23,7 @@ import java.util.List;
 
 
 public class AssignmentHome extends Fragment {
-    private FragmentFourthBinding binding;
+    private AssignmentFragmentBinding binding;
     private static AssignmentListAdapter assignmentListAdapter;
 
     @Override
@@ -32,7 +32,7 @@ public class AssignmentHome extends Fragment {
             Bundle savedInstanceState
     ) {
         assignmentListAdapter = new AssignmentListAdapter(getContext());
-        binding = FragmentFourthBinding.inflate(inflater, container, false);
+        binding = AssignmentFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.databinding.FragmentSecondBinding;
+import com.example.cs_2340_assignment_1.databinding.CourseFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CourseHome extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private CourseFragmentBinding binding;
     private CourseListAdapter courseListAdapter;
 
     @Override
@@ -31,7 +31,7 @@ public class CourseHome extends Fragment {
             Bundle savedInstanceState
     ) {
         courseListAdapter = new CourseListAdapter(getContext());
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = CourseFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 

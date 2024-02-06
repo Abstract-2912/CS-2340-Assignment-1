@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.Exam;
-import com.example.cs_2340_assignment_1.databinding.FragmentSixthBinding;
+import com.example.cs_2340_assignment_1.databinding.ExamFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.PriorityQueue;
  * A simple {@link Fragment} subclass.
  */
 public class ExamHome extends Fragment {
-    private FragmentSixthBinding binding;
+    private ExamFragmentBinding binding;
     private ExamListAdapter examListAdapter;
 
 
@@ -35,7 +35,7 @@ public class ExamHome extends Fragment {
             Bundle savedInstanceState
     ) {
         examListAdapter = new ExamListAdapter(getContext());
-        binding = FragmentSixthBinding.inflate(inflater, container, false);
+        binding = ExamFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -65,7 +65,7 @@ public class ExamHome extends Fragment {
         binding.back.setOnClickListener(
                 e -> {
                     NavHostFragment.findNavController(ExamHome.this)
-                            .navigate(R.id.navigateToAddCourse);
+                            .navigate(R.id.navigateFromExamsToHome);
                 }
         );
 
