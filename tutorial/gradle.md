@@ -48,7 +48,7 @@ such as a Search configuration.
 
 <br>
 
-## :hammer_and_wrench: Configuration
+## &#9881; Configuration
 In order to simulate the  configuration for a particular type of Android device 
 (Android phone, tablet, Wear OS, Android TV, etc.), you will need to use the 
 **Android Virtual Device (AVD)** manager to create a virtual device. So, let's create
@@ -62,32 +62,35 @@ toolbar). <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-A
 
 > [!IMPORTANT]
 > If the **Download** symbol is next to the latest release, it has not been installed yet. So, click the link to start the download, and click **Next** when it's done.
+
+<br>
+
 5. In the next dialog box, verify the configuration and select **Finish**.
 6. The AVD manager should now display the virtual device just you added.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/32ab2a70-5ae4-4038-bf13-eecaa2ef5d2c" width="40%" height="40%"></p>
 
 <br>
 
-## :play_or_pause_button: Run Your App
-Congratulations! You've just configured your first Android project! Now, let's try
-running your app on your new emulator and/or a device.
+## :arrow_forward: Run Your App
+Congratulations! You've just configured your first Android project! Now, let's try running your app on your new emulator.
 
-### Emulator
-Select **Run** > **Run 'app'** (or the **Run** icon in the toolbar).
+1. Select **Run** > **Run 'app'** (or the **Run** icon in the toolbar).
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/0f1a61cb-7699-4c76-942b-948dfae9812e" width="70%" height="80%"></p>
 
-If you would like to change the virtual device you would like to run on, select **Run** > **Select Device** (or use the dropdown next to the **Run** icon in the 
+2. If you would like to change the virtual device you would like to run on, select **Run** > **Select Device** (or use the dropdown next to the **Run** icon in the 
 toolbar).
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/73f12395-d1a3-473d-b6b3-3dc9910090c6" width="30%" height="30%"></p>
 
+> [!NOTE]
+> This may take some time depending on the speed of your computer, but you may look at the horizaontal status bar at the very bottom of the window to see progress messages such as:
+> - _Gradle Build Running_
+> - _Waiting for target device to come on line_
+> - _Installing APK_
+> -  _Launching activity_
 
-This may take some time depending on the speed of your computer, but you may look at the horizaontal status bar at the very bottom of the window to see progress messages such as:
-- _Gradle Build Running_
-- _Waiting for target device to come on line_
-- _Installing APK_
-- _Launching activity_
+<br>
 
-Once your app builds and the emulator is ready, Android Studio uploads the app to the emulator and runs it.You should see a window mimicking the screen of your configured device as shown below:
+3. Once your app builds and the emulator is ready, Android Studio uploads the app to the emulator and runs it.You should see a window mimicking the screen of your configured device as shown below:
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/2c296a04-ba70-47bf-88b9-d769443c7b4b" width="40%" height="40%"></p>
 
 
