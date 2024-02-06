@@ -20,7 +20,7 @@ import com.example.cs_2340_assignment_1.state.State;
 import java.util.HashMap;
 import java.util.List;
 
-public class SecondFragment extends Fragment {
+public class CourseHome extends Fragment {
 
     private FragmentSecondBinding binding;
     private CourseListAdapter courseListAdapter;
@@ -53,15 +53,15 @@ public class SecondFragment extends Fragment {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_thirdFragment);
+                NavHostFragment.findNavController(CourseHome.this)
+                        .navigate(R.id.navigateFromCoursesToHome);
             }
         });
 
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(SecondFragment.this)
-                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                    NavHostFragment.findNavController(CourseHome.this)
+                            .navigate(R.id.navigateToAddCourse);
                 }
         );
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {

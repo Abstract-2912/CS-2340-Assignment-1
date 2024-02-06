@@ -16,18 +16,14 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.Exam;
 import com.example.cs_2340_assignment_1.databinding.FragmentSeventhBinding;
-import com.example.cs_2340_assignment_1.databinding.FragmentThirdBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
-import java.sql.Time;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SeventhFragment extends Fragment {
+public class ExamAdd extends Fragment {
     private FragmentSeventhBinding binding;
 
     @Override
@@ -79,8 +75,8 @@ public class SeventhFragment extends Fragment {
                 }
 
                 examListAdapter.setTasks(State.getExamsPriorityQueue());
-                NavHostFragment.findNavController(SeventhFragment.this)
-                        .navigate(R.id.action_seventhFragment_to_sixthFragment);
+                NavHostFragment.findNavController(ExamAdd.this)
+                        .navigate(R.id.navigateToExams);
 
 
             }

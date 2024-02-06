@@ -3,111 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/Home">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/Home"
         android:name="com.example.cs_2340_assignment_1.Home"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:label="Home"
+        tools:layout="@layout/home_fragment">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/navigateFromHomeToCourses"
+            app:destination="@id/Courses" />
         <action
-            android:id="@+id/action_FirstFragment_to_fourthFragment2"
-            app:destination="@id/fourthFragment" />
+            android:id="@+id/navigateFromHomeToAssignments"
+            app:destination="@id/Assignments" />
         <action
-            android:id="@+id/action_FirstFragment_to_sixthFragment2"
-            app:destination="@id/sixthFragment" />
+            android:id="@+id/navigateFromHomeToExams"
+            app:destination="@id/Exams" />
         <action
-            android:id="@+id/action_FirstFragment_to_eigthFragment2"
-            app:destination="@id/eigthFragment" />
+            android:id="@+id/navigateFromHomeToTodoLists"
+            app:destination="@id/TodoList" />
 
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.cs_2340_assignment_1.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/Courses"
+        android:name="com.example.cs_2340_assignment_1.CourseHome"
+        android:label="Courses"
+        tools:layout="@layout/course_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_thirdFragment"
-            app:destination="@id/thirdFragment" />
+            android:id="@+id/navigateFromCoursesToHome"
+            app:destination="@id/AddCourse" />
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/navigateToAddCourse"
+            app:destination="@id/Home" />
     </fragment>
     <fragment
-        android:id="@+id/thirdFragment"
-        android:name="com.example.cs_2340_assignment_1.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" >
+        android:id="@+id/AddCourse"
+        android:name="com.example.cs_2340_assignment_1.CourseAdd"
+        android:label="Add Course"
+        tools:layout="@layout/course_add_fragment" >
         <action
-            android:id="@+id/action_thirdFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/navigateToCourses"
+            app:destination="@id/Courses" />
         <argument
             android:name="myArg"
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/fourthFragment"
-        android:name="com.example.cs_2340_assignment_1.FourthFragment"
-        android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" >
+        android:id="@+id/Assignments"
+        android:name="com.example.cs_2340_assignment_1.AssignmentHome"
+        android:label="Assignments"
+        tools:layout="@layout/assignment_fragment" >
         <action
-            android:id="@+id/action_fourthFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/navigateFromAssignmentsToHome"
+            app:destination="@id/Home" />
         <action
-            android:id="@+id/action_fourthFragment_to_fifthFragment"
-            app:destination="@id/fifthFragment" />
+            android:id="@+id/navigateToAddAssignment"
+            app:destination="@id/AddAssignment" />
     </fragment>
     <fragment
-        android:id="@+id/fifthFragment"
-        android:name="com.example.cs_2340_assignment_1.FifthFragment"
-        android:label="fragment_fifth"
-        tools:layout="@layout/fragment_fifth" >
+        android:id="@+id/AddAssignment"
+        android:name="com.example.cs_2340_assignment_1.AssignmentAdd"
+        android:label="Add Assignment"
+        tools:layout="@layout/assignment_add_fragment" >
         <action
-            android:id="@+id/action_fifthFragment_to_fourthFragment"
-            app:destination="@id/fourthFragment" />
+            android:id="@+id/navigateToAssignments"
+            app:destination="@id/Assignments" />
     </fragment>
     <fragment
-        android:id="@+id/sixthFragment"
-        android:name="com.example.cs_2340_assignment_1.SixthFragment"
-        android:label="fragment_sixth"
-        tools:layout="@layout/fragment_sixth" >
+        android:id="@+id/Exams"
+        android:name="com.example.cs_2340_assignment_1.ExamHome"
+        android:label="Exam"
+        tools:layout="@layout/exam_fragment" >
         <action
-            android:id="@+id/action_sixthFragment_to_seventhFragment"
-            app:destination="@id/seventhFragment" />
+            android:id="@+id/navigateToAddExam"
+            app:destination="@id/AddExam" />
+        <action
+            android:id="@+id/navigateFromExamsToHome"
+            app:destination="@id/Home" />
     </fragment>
     <fragment
-        android:id="@+id/seventhFragment"
-        android:name="com.example.cs_2340_assignment_1.SeventhFragment"
-        android:label="fragment_seventh"
-        tools:layout="@layout/fragment_seventh">
+        android:id="@+id/AddExam"
+        android:name="com.example.cs_2340_assignment_1.ExamAdd"
+        android:label="Add Exam"
+        tools:layout="@layout/exam_add_fragment">
         <action
-            android:id="@+id/action_seventhFragment_to_sixthFragment"
-            app:destination="@id/sixthFragment" />
+            android:id="@+id/navigateToExams"
+            app:destination="@id/Exams" />
     </fragment>
     <fragment
-        android:id="@+id/eigthFragment"
+        android:id="@+id/TodoList"
         android:name="com.example.cs_2340_assignment_1.EigthFragment"
-        android:label="fragment_eight"
-        tools:layout="@layout/fragment_eigth" >
+        android:label="Todo List"
+        tools:layout="@layout/todo_fragment" >
         <action
-            android:id="@+id/action_eigthFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/navigateFromTodoListsToHome"
+            app:destination="@id/Home" />
         <action
-            android:id="@+id/action_eigthFragment_to_ninthFragment"
-            app:destination="@id/ninthFragment" />
+            android:id="@+id/navigateToAddTodoItems"
+            app:destination="@id/AddTodoItems" />
     </fragment>
     <fragment
-        android:id="@+id/ninthFragment"
-        android:name="com.example.cs_2340_assignment_1.FifthFragment"
-        android:label="fragment_ninth"
-        tools:layout="@layout/fragment_ninth" >
+        android:id="@+id/AddTodoItems"
+        android:name="com.example.cs_2340_assignment_1.AssignmentAdd"
+        android:label="Add Item"
+        tools:layout="@layout/todo_add_fragment" >
         <action
-            android:id="@+id/action_ninthFragment_to_eigthFragment"
-            app:destination="@id/eigthFragment" />
+            android:id="@+id/navigateToTodoLists"
+            app:destination="@id/TodoList" />
     </fragment>
 </navigation>

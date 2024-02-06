@@ -18,7 +18,7 @@ import com.example.cs_2340_assignment_1.state.State;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThirdFragment extends Fragment {
+public class CourseAdd extends Fragment {
     private FragmentThirdBinding binding;
 
     @Override
@@ -59,8 +59,8 @@ public class ThirdFragment extends Fragment {
                     }
 
                 });
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_thirdFragment_to_SecondFragment);
+                NavHostFragment.findNavController(CourseAdd.this)
+                        .navigate(R.id.navigateToCourses);
 
 
             }

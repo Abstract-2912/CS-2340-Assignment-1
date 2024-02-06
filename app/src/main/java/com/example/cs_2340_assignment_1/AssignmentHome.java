@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class FourthFragment extends Fragment {
+public class AssignmentHome extends Fragment {
     private FragmentFourthBinding binding;
     private static AssignmentListAdapter assignmentListAdapter;
 
@@ -55,8 +55,8 @@ public class FourthFragment extends Fragment {
         binding.fab4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_fourthFragment_to_fifthFragment);
+                NavHostFragment.findNavController(AssignmentHome.this)
+                        .navigate(R.id.navigateToAddAssignment);
             }
         });
 
@@ -74,8 +74,8 @@ public class FourthFragment extends Fragment {
 
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(FourthFragment.this)
-                            .navigate(R.id.action_fourthFragment_to_FirstFragment);
+                    NavHostFragment.findNavController(AssignmentHome.this)
+                            .navigate(R.id.navigateFromAssignmentsToHome);
                 }
         );
 

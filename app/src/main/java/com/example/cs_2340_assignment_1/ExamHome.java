@@ -15,18 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.Exam;
-import com.example.cs_2340_assignment_1.databinding.FragmentSecondBinding;
 import com.example.cs_2340_assignment_1.databinding.FragmentSixthBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SixthFragment extends Fragment {
+public class ExamHome extends Fragment {
     private FragmentSixthBinding binding;
     private ExamListAdapter examListAdapter;
 
@@ -59,15 +57,15 @@ public class SixthFragment extends Fragment {
         binding.fab5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SixthFragment.this)
-                        .navigate(R.id.action_sixthFragment_to_seventhFragment);
+                NavHostFragment.findNavController(ExamHome.this)
+                        .navigate(R.id.navigateToAddExam);
             }
         });
 
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(SixthFragment.this)
-                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                    NavHostFragment.findNavController(ExamHome.this)
+                            .navigate(R.id.navigateToAddCourse);
                 }
         );
 

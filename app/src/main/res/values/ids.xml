@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="sixthFragment" type="id" />
-    <item name="seventhFragment" type="id" />
-    <item name="eigthFragment" type="id" />
-    <item name="ninthFragment" type="id" />
+    <item name="Exams" type="id" />
+    <item name="AddExam" type="id" />
+    <item name="TodoList" type="id" />
+    <item name="AddTodoItems" type="id" />
     <item name="action_FirstFragment_to_fourthFragment" type="id" />
     <item name="action_FirstFragment_to_sixthFragment" type="id" />
     <item name="action_FirstFragment_to_eigthFragment" type="id" />
-    <item name="action_sixthFragment_to_seventhFragment" type="id" />
-    <item name="action_seventhFragment_to_sixthFragment" type="id" />
-    <item name="action_eigthFragment_to_FirstFragment" type="id" />
-    <item name="action_ninthFragment_to_eigthFragment" type="id" />
+    <item name="navigateToAddExam" type="id" />
+    <item name="navigateToExams" type="id" />
+    <item name="navigateFromTodoListsToHome" type="id" />
+    <item name="navigateToTodoLists" type="id" />
 
 
 </resources>

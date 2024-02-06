@@ -33,25 +33,25 @@ public class Home extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Home.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.navigateFromHomeToCourses);
             }
         });
         binding.btodolist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Home.this)
-                        .navigate(R.id.action_FirstFragment_to_eigthFragment2);
+                        .navigate(R.id.navigateFromHomeToTodoLists);
             }
         });
         binding.bassignments.setOnClickListener(e -> {
             NavHostFragment.findNavController(Home.this)
-                    .navigate(R.id.action_FirstFragment_to_fourthFragment2);
+                    .navigate(R.id.navigateFromHomeToAssignments);
         });
         binding.bexams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Home.this)
-                        .navigate(R.id.action_FirstFragment_to_sixthFragment2);
+                        .navigate(R.id.navigateFromHomeToExams);
             }
         });
     }

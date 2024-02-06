@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -15,10 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.data.Assignment;
-import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.data.Exam;
 import com.example.cs_2340_assignment_1.databinding.FragmentFifthBinding;
-import com.example.cs_2340_assignment_1.databinding.FragmentSeventhBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.sql.Timestamp;
@@ -26,7 +22,7 @@ import java.sql.Timestamp;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FifthFragment extends Fragment {
+public class AssignmentAdd extends Fragment {
     private FragmentFifthBinding binding;
 
     @Override
@@ -43,7 +39,7 @@ public class FifthFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        AssignmentListAdapter assignmentListAdapter = FourthFragment.getAssignmentListAdapter();
+        AssignmentListAdapter assignmentListAdapter = AssignmentHome.getAssignmentListAdapter();
         Button buttonAdd = getActivity().findViewById(R.id.assignments_save_button);
         assignmentName = getActivity().findViewById(R.id.assignment_name);
         courseName = getActivity().findViewById(R.id.course_name);
@@ -76,8 +72,8 @@ public class FifthFragment extends Fragment {
                 );
 
                 assignmentListAdapter.setTasks(State.getAssignmentsMap());
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_fifthFragment_to_fourthFragment);
+                NavHostFragment.findNavController(AssignmentAdd.this)
+                        .navigate(R.id.navigateToAssignments);
             }
         });
     }
