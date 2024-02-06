@@ -151,6 +151,63 @@ select the last expandable section: **All Attributes**.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/27e29f44-bcbf-4f4b-af92-c4e71d1f081c" width="60%" height="60%"></p>
 
 ### ~ Resources ~
+So far you have learned how to change property values. Next, you will learn how to create more resources like the string resources you worked with earlier. Using resources enables you to use the same values in multiple places, or to define values and have the UI update automatically whenever the value is changed.
+#### Adding Color Resources
 
+1. In the **Project** panel on the left, follow the path **res** > **values** > **colors.xml** to open the color resource file. The `colors.xml` file opens in the editor. So far, two colors have been defined, _black_ and _white_, which are the colors you can see in your app layout.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/203a5462-54be-49b5-98e3-393e60f21ed4" width="40%" height="40%"></p>
 
-Congratulations! You've designed the user interface your first application! Click [**here**](actions.md) for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you will start add functionality to your application.
+2. Navigate back to `fragment_first.xml` that has the XML code for the layout. Add a new property to the `<TextView>` called `android:background` and type **@color**. Now, a menu should pop up with predefined color resources.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/71b97f7b-2f9b-4b42-871f-f847911a3c3d" width="50%" height="50%"></p>
+
+3. Choose **@color/black**.
+
+4. Find the property `android:textColor` (which was referred to in the previoius section) and give it the value **@android:color/white**. 
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/1cec2d56-6a79-4fd7-a406-872e7e9dbae2" width="50%" height="50%"></p>
+
+> [!NOTE]
+> The Android framework defines a range of colors, including white, so you don't have to define white yourself.
+
+<br>
+
+5. Navigate to the **_Design Editor_**; you can see that the `<TextView>` now has a black background, and the text is displayed in white.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/ca587e0a-5c00-42fd-ad91-843c80c99cf3" width="30%" height="30%"></p>
+
+<br>
+
+#### Adding a Background Color
+A _Color_ can be defined as 3 hexadecimal numbers (#00-#FF, or 0-255) representing the red, blue, and green (RGB) components.
+
+1. Back in `colors.xml`, create a new color resource under `<resources>` called `screenBackground` and define it as **#FFEE58**, he color you just added is yellow. Notice that the colors corresponding to the code are displayed in the left margin of the editor. In this case, you just added the color yellow.
+```angular2html
+<color name="screenBackground">#FFEE58</color>
+```
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/15cbfcbb-851d-46f7-bf69-f1ef21aaa683" width="40%" height="40%"></p>
+
+> [!NOTE]
+> A color can also be defined including an _alpha value_ (#00-#FF), which is a measure of transparency:  _(#00 = 0% = fully transparent, #FF = 100% = fully opaque)_.
+> 
+> _Examples_:
+> - #88FFEE58 makes the color semi-transparent. 
+> - If you use #00FFEE58, it's fully transparent and disappears from the left-hand bar.
+
+<br>
+
+2. Go back to `fragment_first.xml`. In the **_Component Tree_**, select the `ConstraintLayout`.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/4da4f137-379d-4023-8552-af9046b1eeb2" width="40%" height="40%"></p>
+
+3. In the **_Attributes_** panel, go to **All Attributes**, and select the **background** property. Type "**c**" in the appearing field.
+   
+4. In the menu of colors that appears, select **@color/screenBackground**. Press **Enter** to complete the selection.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/de4a2ed7-7d06-4b08-9b11-9161f79158de" width="40%" height="40%"></p>
+
+5. Click on the yellow patch to the left of the color value in the **background** field. It shows a list of colors defined in `colors.xml`. Click the **Custom** tab to choose a custom color with an interactive color chooser.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/b13a5044-62f0-41a3-9981-c88e95af19a7" width="30%" height="30%"></p>
+
+6. Feel free to change the value of the `screenBackground` color, but make sure that the final color is noticeably different from the `colorPrimary` and `colorPrimaryDark` colors.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/988da9c3-ccef-4917-8b1f-9441567d6dad" width="30%" height="30%"></p>
+
+<br>
+
+_Congratulations_! You've designed the user interface your first application! Click [**here**](actions.md) for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you will start add functionality to your application.
+
