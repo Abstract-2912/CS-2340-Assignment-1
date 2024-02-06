@@ -233,5 +233,5 @@ A _Color_ can be defined as 3 hexadecimal numbers (#00-#FF, or 0-255) representi
 
 <br>
 
-_Congratulations_! You've designed the user interface your first application! Click [**here**](actions.md) for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you will start add functionality to your application.
+_Congratulations_! You've designed the user interface your first application! Click [**here**](construction.md) for **next steps** or alternatively, navigate to the `construction.md` file in this repository, where you will start adding UI elements to your app .
 
