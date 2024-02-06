@@ -39,9 +39,8 @@ public class CourseAdd extends Fragment {
         EditText courseInstructor = getActivity().findViewById(R.id.editcourseInstructor);
         EditText courseTime = getActivity().findViewById(R.id.editcourseTime);
 
-        buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonAdd.setOnClickListener(
+            e -> {
                 String name = etTask.getText().toString().trim();
                 String instructorName = courseInstructor.getText().toString().trim();
                 String cCourseTime = courseTime.getText().toString().trim();
@@ -61,13 +60,8 @@ public class CourseAdd extends Fragment {
                 });
                 NavHostFragment.findNavController(CourseAdd.this)
                         .navigate(R.id.navigateToCourses);
-
-
             }
-
-        });
-
-
+        );
     }
 
     @Override

@@ -14,19 +14,31 @@
 
     <!-- EditText for getttaskEntrytask description input -->
     <EditText
-        android:id="@+id/editToDoList"
+        android:id="@+id/editTodoItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
         android:hint="@string/enterTask"
         android:paddingBottom="@dimen/activity_horizontal_margin" />
 
+    <EditText
+        android:id="@+id/editTodoItemPriority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="Enter Priority (1-10)"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
 
+    <EditText
+        android:id="@+id/editTodoItemDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="Enter Task Description"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
 
-
-    <!-- Add button -->
     <Button
-        android:id="@+id/saveButtonToDo"
+        android:id="@+id/saveButtonTodo"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
