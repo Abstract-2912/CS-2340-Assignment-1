@@ -36,7 +36,9 @@ into an Android app. You can view the visual representation, the XML code, or bo
 4) The **_Attributes_** panel has three buttons representing the **Code** (code only), **Split** (both code and design),
 and **Design** (design only) views. It is currently set on the **Design** view.
 
-### ~ Design Editor ~
+<br>
+
+### Design Editor
 Depending on your screen size and work style, you may prefer a specific setup that is easier for you to look at.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/22b25739-6751-49e1-902f-55f3f3e8b6fd" width="50%" height="50%"></p>
 
@@ -48,7 +50,9 @@ Depending on your screen size and work style, you may prefer a specific setup th
 4. Use the **device menu** to view the layout on different devices.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/45498d67-7265-4832-97ff-8bd66baf71e7" width="30%" height="30%"></p>
 
-### ~ Component Tree ~
+<br>
+
+### Component Tree
 This panel shows the view hierarchy in your layout, that is, how the views are arranged in relation to each other. Every layout must have a _root view_ that contains all the other views. The root view is always a _view group_, which is a view that contains other views. Notice that the root of the view hierarchy is a `ConstraintLayout` view.
 
 <figure>
@@ -63,7 +67,7 @@ This panel shows the view hierarchy in your layout, that is, how the views are a
 ## :pencil: Editing
 Now that each part has been briefly introduced, let's learn how to edit it to achieve the desired layout.
 
-### ~ Properties ~
+### Properties
 
 In the `.xml` file, we can change property values, text display properties, and more! 
 Use the dropdowns below &darr; to see examples of two attributes you can edit.
@@ -150,7 +154,9 @@ the **_Component Tree_** panel (such as `button_first`). From the **_Attributes_
 select the last expandable section: **All Attributes**.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/27e29f44-bcbf-4f4b-af92-c4e71d1f081c" width="60%" height="60%"></p>
 
-### ~ Resources ~
+<br>
+
+### Resources
 So far you have learned how to change property values. Next, you will learn how to create more resources like the string resources you worked with earlier. Using resources enables you to use the same values in multiple places, or to define values and have the UI update automatically whenever the value is changed.
 #### Adding Color Resources
 
