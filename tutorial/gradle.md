@@ -1,4 +1,4 @@
-## Structure
+## :office: Structure
 
 Let's familiarize ourselves with the default code and files created and try 
 to run this app. 
@@ -46,7 +46,9 @@ such as a Search configuration.
 > [!CAUTION]
 > Never save resource files directly inside the **res/** directory. It causes a compiler error.
 
-## Configuration
+<br>
+
+## :hammer_and_wrench: Configuration
 In order to simulate the  configuration for a particular type of Android device 
 (Android phone, tablet, Wear OS, Android TV, etc.), you will need to use the 
 **Android Virtual Device (AVD)** manager to create a virtual device. So, let's create
@@ -64,7 +66,9 @@ toolbar). <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-A
 6. The AVD manager should now display the virtual device just you added.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/32ab2a70-5ae4-4038-bf13-eecaa2ef5d2c" width="40%" height="40%"></p>
 
-## Run Your App
+<br>
+
+## :play_or_pause_button: Run Your App
 Congratulations! You've just configured your first Android project! Now, let's try
 running your app on your new emulator and/or a device.
 
@@ -86,8 +90,6 @@ This may take some time depending on the speed of your computer, but you may loo
 Once your app builds and the emulator is ready, Android Studio uploads the app to the emulator and runs it.You should see a window mimicking the screen of your configured device as shown below:
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/2c296a04-ba70-47bf-88b9-d769443c7b4b" width="40%" height="40%"></p>
 
-### Device
-[comment]: <> (add how to run on a device)
 
 You've now configured and run your first Android app - now let's personalize it! Click [**here**](xml.md) for **next steps** or alternatively, navigate to the `xml.md` file in this repository, where you
 will start designing your application.
