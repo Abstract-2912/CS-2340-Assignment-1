@@ -10,17 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cs_2340_assignment_1.data.Assignment;
-import com.example.cs_2340_assignment_1.data.Exam;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
-import java.util.PriorityQueue;
 
 public class AssignmentListAdapter extends RecyclerView.Adapter<AssignmentListAdapter.AssignmentViewHolder> {
     private List<Assignment> mAssignmentEntries;
@@ -31,6 +28,7 @@ public class AssignmentListAdapter extends RecyclerView.Adapter<AssignmentListAd
         mContext = context;
         sortedByDueDate = true;
     }
+
     @NonNull
     @Override
     public AssignmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -71,7 +69,7 @@ public class AssignmentListAdapter extends RecyclerView.Adapter<AssignmentListAd
         List<Assignment> tasks = new ArrayList<>();
         ArrayList<String> keySet = new ArrayList<>(State.getCourseMap().keySet());
         Collections.sort(keySet);
-        for (var k: keySet) {
+        for (var k : keySet) {
             ArrayList<Assignment> courseTasks = new ArrayList<>();
             if (State.getCourseMap().get(k).getAssignments() != null) {
                 for (var k1 : Objects.requireNonNull(State.getCourseMap().get(k)).getAssignments().keySet()) {
