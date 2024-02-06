@@ -1,10 +1,10 @@
 # Android Studio 101: Java
 
-## Introduction
+## :wave: Introduction
 
 In this tutorial, you'll learn how to build and run your first app in Android Studio using the programming language Java.
 
-#### *Objectives*:
+**Objectives**:
 * Familiarize an individual with the basics of the Android Studio SDK
 * Develop a simple application that contains with the following features:
   - Multiple pages
@@ -14,7 +14,9 @@ In this tutorial, you'll learn how to build and run your first app in Android St
 
 _Let's get started!_
 
-## Installation
+<br>
+
+## :computer: Installation
 
 To install, download [Android Studio](https://developer.android.com/studio) for your machine. 
 1. From this [page](https://developer.android.com/studio), click on the ***Download Android Studio button***.
@@ -31,7 +33,9 @@ To install, download [Android Studio](https://developer.android.com/studio) for 
 
 _You are ready to create your first project!_
 
-## Project Setup
+<br>
+
+## :hammer_and_wrench: Project Setup
 Once Android Studio is installed, open it and:
 1. Create a new project by clicking the **_New Project_** button and select the **_Basic Views Activity_** or **_Empty Views Activity_**. <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/8f332f33-884b-4ef7-b59f-21a73becddef" width="50%" height="50%"> </p>
 2. After doing this, give your project a name, such as 'MyFirstApp' or 'TestApp' and select the **_Language_** to be Java instead of Kotlin. <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/62378e57-d051-41fc-9213-8ce2edd102ce" width="50%" height="50%"> </p>
