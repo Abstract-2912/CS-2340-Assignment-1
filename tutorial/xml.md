@@ -101,18 +101,18 @@ Right-click on the property and click **Go To** > **Declaration and Usages**.
 1. Navigate to the `fragment_first.xml` file and select `textview_first` from the **_Component Tree_** panel.
 Look at the **_Attributes_** panel on the right, open the **Common Attributes** section, and
 expand the `textAppearance` field.
-<p align="center"><img src="img_6.png" width="50%" height="60%"></p>
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/6da4065a-7dd3-4cde-8ccb-92afcf7572f7" width="50%" height="60%"></p>
 
 2. From here, you can change some of the text appearance properties. For example, change the font family, increase the text size, and select bold style.
-<p align="center"><img src="img_7.png" width="30%" height="30%"></p>
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/aca623bd-cb85-48a9-8e86-965fdfcba683" width="25%" height="25%"></p>
 
 3. To change the text color, click in the `textColor` field, and enter '**g**'. A menu will pop
 up with possible completion values containing the letter 'g', including predefined colors.
-<p align="center"><img src="img_8.png" width="30%" height="30%"></p>
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/fb972d98-60c4-4415-a0fd-dff0cf4e9473" width="30%" height="30%"></p>
 
 4. Select `@color/design_default_color_secondary` and press **Enter**.
 5. Run your app to see the changes applied to your "Hello World!" string in the **Design Layout**.
-<p align="center"><img src="img_9.png" width="30%" height="30%"></p>
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/6848c320-923e-499d-abe3-4f0be8a97767" width="25%" height="25%"></p>
 
 6. In the XML file, look for the `<TextView>` element to see the added new properties.
 ```angular2html
@@ -141,6 +141,6 @@ up with possible completion values containing the letter 'g', including predefin
 To display all attributes you could set for a component, select the component from
 the **_Component Tree_** panel (such as `button_first`). From the **_Attributes_** panel, 
 select the last expandable section: **All Attributes**.
-<p align="center"><img src="img_10.png" width="50%" height="50%"></p>
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/27e29f44-bcbf-4f4b-af92-c4e71d1f081c" width="60%" height="60%"></p>
 
 Congratulations! You've designed the user interface your first application! Click [**here**](actions.md) for **next steps** or alternatively, navigate to the `actions.md` file in this repository, where you will start add functionality to your application.
