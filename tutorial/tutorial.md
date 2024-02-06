@@ -44,9 +44,9 @@ Once Android Studio is installed, open it and:
 5. Hit **_Finish_**.
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/38d7ad49-c7b0-4f42-948c-bbf10e062122" width="50%" height="50%"> </p>
 
+<br>
 
-_Congratulations!_ You've just completed the setup for your first Android application! Now, a default app is created with default files. 
+_Congratulations!_ You've just completed the setup for your first Android application! Now, a default app is created with default files. Click [**here**](gradle.md) for **next steps** or alternatively, navigate to the `gradle.md` file in this repository.
 <p align="center"> <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/823336dd-de0f-4d56-8ddb-7d714d0ed276" width="70%" height="50%"> </p>
 
-Click [**here**](gradle.md)
-for **next steps** or alternatively, navigate to the `gradle.md` file in this repository.
+
