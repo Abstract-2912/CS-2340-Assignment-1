@@ -75,7 +75,6 @@ public class ExamListAdapter extends RecyclerView.Adapter<ExamListAdapter.ExamVi
     }
 
     public static class ExamViewHolder extends RecyclerView.ViewHolder {
-        // Class variables for the task description and priority TextViews
         TextView courseName;
         TextView examName;
         TextView location;

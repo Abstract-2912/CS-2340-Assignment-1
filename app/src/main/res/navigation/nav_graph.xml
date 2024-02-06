@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/TodoList"
-        android:name="com.example.cs_2340_assignment_1.EigthFragment"
+        android:name="com.example.cs_2340_assignment_1.TodoHome"
         android:label="Todo List"
         tools:layout="@layout/todo_fragment" >
         <action

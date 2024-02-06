@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Description" />
+            tools:text="Item Name" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             <!-- TextView for task_priority -->
             <TextView
                 android:id="@+id/task_priority"
-                android:layout_width="42dp"
+                android:layout_width="27dp"
                 android:layout_height="match_parent"
                 android:text="Priority" />
 
