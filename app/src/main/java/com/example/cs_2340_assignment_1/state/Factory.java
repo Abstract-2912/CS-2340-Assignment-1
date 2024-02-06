@@ -107,6 +107,7 @@ public final class Factory {
             throw new IllegalArgumentException("Associated class does not exist!");
         } else {
             c.addAssignment(a);
+            c.getAssignments().put(a.getTitle(), a);
             courseMap.put(c.getName(), c);
             State.update(courseMap, State.getTodoLists());
         }

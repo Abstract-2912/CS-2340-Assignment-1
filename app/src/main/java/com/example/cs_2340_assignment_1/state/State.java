@@ -25,7 +25,7 @@ public final class State {
 
     // STATE FIELDS
     private static HashMap<String, Course> courseMap = new HashMap<>();
-    private static final PriorityQueue<Assignment> assignmentsPriorityQueue = new PriorityQueue<>();
+    private static final HashMap<String, Assignment> assignmentMap = new HashMap<>();
     private static final PriorityQueue<Exam> examsPriorityQueue = new PriorityQueue<>();
     private static HashMap<String, TodoList> todoLists = new HashMap<>();
 
@@ -34,8 +34,8 @@ public final class State {
         return courseMap;
     }
 
-    public static PriorityQueue<Assignment> getAssignmentsPriorityQueue() {
-        return assignmentsPriorityQueue;
+    public static HashMap<String, Assignment> getAssignmentsMap() {
+        return assignmentMap;
     }
 
     public static PriorityQueue<Exam> getExamsPriorityQueue() {
@@ -64,13 +64,15 @@ public final class State {
      */
     public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> todoLists) {
         setCourseMap(courseMap);
-        assignmentsPriorityQueue.clear();
+        assignmentMap.clear();
         examsPriorityQueue.clear();
 
         for (String key : courseMap.keySet()) {
             Course c = courseMap.get(key);
             if (c != null) {
-                assignmentsPriorityQueue.addAll(c.getAssignments());
+                for (String a: c.getAssignments().keySet()) {
+                    assignmentMap.put(c.getAssignments().get(a).getTitle(), c.getAssignments().get(a));
+                }
                 examsPriorityQueue.addAll(c.getExams());
             }
         }

@@ -38,7 +38,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="666dp"
+        android:layout_marginTop="600dp"
         android:layout_marginBottom="16dp"
         android:text="Sort By Date" />
 
@@ -50,7 +50,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="184dp"
-        android:layout_marginTop="666dp"
+        android:layout_marginTop="600dp"
         android:layout_marginBottom="16dp"
         android:text="Sort By Class" />
 

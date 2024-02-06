@@ -2,6 +2,7 @@ package com.example.cs_2340_assignment_1.data;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -32,9 +33,9 @@ public final class Course {
     private List<String> courseTimes;
 
     /**
-     * PriorityQueue of assignments associated with this course.
+     * HashMap of assignments associated with this course.
      */
-    private PriorityQueue<Assignment> assignments;
+    private HashMap<String, Assignment> assignments;
 
     /**
      * PriorityQueue of exams associated with this course.
@@ -61,7 +62,7 @@ public final class Course {
             String name,
             String instructorName,
             List<String> courseTimes,
-            PriorityQueue<Assignment> assignments,
+            HashMap<String, Assignment> assignments,
             PriorityQueue<Exam> exams,
             String notes
     ) {
@@ -86,7 +87,7 @@ public final class Course {
         this(name,
                 instructorName,
                 courseTimes,
-                new PriorityQueue<>(),
+                new HashMap<>(),
                 new PriorityQueue<>(),
                 notes
         );
@@ -147,23 +148,24 @@ public final class Course {
     }
 
     /**
-     * Adds an assignment to the assignments priority queue
+     * Adds an assignment to the assignments hash map
      *
      * @param a Assignment
      */
     public void addAssignment(Assignment a) {
-        assignments.add(a);
+        assignments.put(a.getTitle(), a);
     }
 
     /**
-     * Removes an assignment from the assignments priority queue
+     * Removes an assignment from the assignments hash map
      *
      * @param a Assignment
      * @return action success value
      */
     public boolean removeAssignment(Assignment a) {
-        if (assignments.contains(a)) {
-            return assignments.remove(a);
+        if (assignments.containsKey(a.getTitle())) {
+            Assignment as = assignments.remove(a.getTitle());
+            return as != null;
         } else {
             throw new IllegalArgumentException(
                     "Assignment is not associated with class! Unable to remove."
@@ -293,7 +295,7 @@ public final class Course {
      *
      * @return Assignments priority queue.
      */
-    public PriorityQueue<Assignment> getAssignments() {
+    public HashMap<String, Assignment> getAssignments() {
         return assignments;
     }
 

@@ -23,6 +23,7 @@ public class Utils {
             list.add(pq.poll());
         }
         Collections.sort(list);
+        Collections.reverse(list);
         return list;
     }
 }

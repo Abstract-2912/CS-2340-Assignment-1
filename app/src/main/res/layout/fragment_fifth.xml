@@ -14,35 +14,38 @@
 
     <!-- EditText for getttaskEntrytask description input -->
     <EditText
-        android:id="@+id/editAssignmentDescription"
+        android:id="@+id/course_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
-        android:hint="@string/assignmentDescription"
+        android:hint="Enter Course Name"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+    <EditText
+        android:id="@+id/assignment_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="Enter Assignment Name"
         android:paddingBottom="@dimen/activity_horizontal_margin" />
 
     <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
-    <EditText
-        android:id="@+id/editAssignmentDueDate"
-        android:layout_width="match_parent"
+    <TimePicker
+        android:id="@+id/assignment_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/assignmentDueDate"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
-    <EditText
-        android:id="@+id/editAsspociatedCourse"
-        android:layout_width="match_parent"
+        android:timePickerMode="spinner" />
+    <DatePicker
+        android:id="@+id/assignment_date"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="start"
-        android:hint="@string/assignmentAssociatedClass"
-        android:paddingBottom="@dimen/activity_horizontal_margin" />
-
-    <!-- RadioGroup for visible selection of a priority -->
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
 
 
     <!-- Add button -->
     <Button
-        android:id="@+id/saveButtonAssignments"
+        android:id="@+id/assignments_save_button"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

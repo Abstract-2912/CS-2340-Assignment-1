@@ -58,7 +58,7 @@ public class SeventhFragment extends Fragment {
                 String cName = courseName.getText().toString().trim();
                 String eLoc = examLocation.getText().toString().trim();
                 Timestamp eTime = new Timestamp(
-                        examDate.getYear(),
+                        examDate.getYear() - 1900,
                         examDate.getMonth(),
                         examDate.getDayOfMonth(),
                         examTime.getHour(),
