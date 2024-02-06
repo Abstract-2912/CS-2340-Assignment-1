@@ -72,6 +72,13 @@ public class FourthFragment extends Fragment {
                 }
         );
 
+        binding.back.setOnClickListener(
+                e -> {
+                    NavHostFragment.findNavController(FourthFragment.this)
+                            .navigate(R.id.action_fourthFragment_to_FirstFragment);
+                }
+        );
+
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
 

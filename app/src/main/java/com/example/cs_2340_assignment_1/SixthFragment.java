@@ -63,6 +63,14 @@ public class SixthFragment extends Fragment {
                         .navigate(R.id.action_sixthFragment_to_seventhFragment);
             }
         });
+
+        binding.back.setOnClickListener(
+                e -> {
+                    NavHostFragment.findNavController(SixthFragment.this)
+                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                }
+        );
+
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
 

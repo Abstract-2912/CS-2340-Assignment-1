@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.databinding.FragmentFirstBinding;
 
-public class FirstFragment extends Fragment {
+public class Home extends Fragment {
 
     private FragmentFirstBinding binding;
 
@@ -32,25 +32,25 @@ public class FirstFragment extends Fragment {
         binding.bcourses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
+                NavHostFragment.findNavController(Home.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
         binding.btodolist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
+                NavHostFragment.findNavController(Home.this)
                         .navigate(R.id.action_FirstFragment_to_eigthFragment2);
             }
         });
         binding.bassignments.setOnClickListener(e -> {
-            NavHostFragment.findNavController(FirstFragment.this)
+            NavHostFragment.findNavController(Home.this)
                     .navigate(R.id.action_FirstFragment_to_fourthFragment2);
         });
         binding.bexams.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
+                NavHostFragment.findNavController(Home.this)
                         .navigate(R.id.action_FirstFragment_to_sixthFragment2);
             }
         });

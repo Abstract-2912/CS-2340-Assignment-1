@@ -57,6 +57,13 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_thirdFragment);
             }
         });
+
+        binding.back.setOnClickListener(
+                e -> {
+                    NavHostFragment.findNavController(SecondFragment.this)
+                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                }
+        );
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
 
