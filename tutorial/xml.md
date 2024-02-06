@@ -137,6 +137,12 @@ up with possible completion values containing the letter 'g', including predefin
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button_first" />
 ```
+
+To display all attributes you could set for a component, select the component from
+the **_Component Tree_** panel (such as `button_first`). From the **_Attributes_** panel, 
+select the last expandable section: **All Attributes**.
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/27e29f44-bcbf-4f4b-af92-c4e71d1f081c" width="60%" height="60%"></p>
+
 </details>
 
 > [!TIP]
@@ -147,10 +153,26 @@ up with possible completion values containing the letter 'g', including predefin
 > android:textColor="@color/design_default_color_primary"
 > ````
 
-To display all attributes you could set for a component, select the component from
-the **_Component Tree_** panel (such as `button_first`). From the **_Attributes_** panel, 
-select the last expandable section: **All Attributes**.
-<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/27e29f44-bcbf-4f4b-af92-c4e71d1f081c" width="60%" height="60%"></p>
+<details><summary>Constraint Properties</summary>
+
+1. In the `fragment_first.xml`, look at the constraint properties under `<TextView>`. They define the position of the `TextView`, so you can constrain the top, bottom, left, and right of a view to the top, bottom, left, and right of other views.
+```angular2html
+app:layout_constraintBottom_toTopOf="@id/textview_first"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+```
+<br>
+
+2. Select `textview_first` in the **_Component Tree_** and then expand the **Layout** section in the **_Attributes_** panel to find the **Constraint Widget** .
+<p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/1c8dd303-c7c9-462f-8b46-b959ad957bd2" width="60%" height="60%"></p>
+
+The square in the middle of the widget represents the selected view. Each of the grey dots represents a constraint, to the top, bottom, left, and right; for this example, from the `TextView` to its parent, the **ConstraintLayout**, or to the **Next** button for the bottom constraint.
+
+> Notice that the blueprint and design views also show the constraints when a particular view is selected. Some of the constraints are jagged lines, but the one to the **Next** button is a squiggle, because it's a little different (follow along to find out more).
+> <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/b1bce546-307b-4096-8e96-1465c2df9677" width="30%" height="30%"></p>
+
+</details>
 
 <br>
 
