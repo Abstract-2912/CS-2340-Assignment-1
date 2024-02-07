@@ -19,9 +19,6 @@ public final class State {
      */
     private static final Factory factory = new Factory();
 
-    public static Factory getFactory() {
-        return factory;
-    }
 
     // STATE FIELDS
     private static HashMap<String, Course> courseMap = new HashMap<>();
