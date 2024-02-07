@@ -38,7 +38,7 @@ and **Design** (design only) views. It is currently set on the **Design** view.
 
 <br>
 
-### Design Editor
+### _Design Editor_
 Depending on your screen size and work style, you may prefer a specific setup that is easier for you to look at.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/22b25739-6751-49e1-902f-55f3f3e8b6fd" width="50%" height="50%"></p>
 
@@ -52,7 +52,7 @@ Depending on your screen size and work style, you may prefer a specific setup th
 
 <br>
 
-### Component Tree
+### _Component Tree_
 This panel shows the view hierarchy in your layout, that is, how the views are arranged in relation to each other. Every layout must have a _root view_ that contains all the other views. The root view is always a _view group_, which is a view that contains other views. Notice that the root of the view hierarchy is a `ConstraintLayout` view.
 <p align="center">
   <img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/c16a702f-5cd6-4aaf-8da6-ece435e3edbf" width="20%" height="10%">  
@@ -62,10 +62,12 @@ This panel shows the view hierarchy in your layout, that is, how the views are a
 
 <br>
 
+<br>
+
 ## :pencil: Editing
 Now that each part has been briefly introduced, let's learn how to edit it to achieve the desired layout.
 
-### Properties
+### _Properties_
 
 In the `.xml` file, we can change property values, text display properties, and more! 
 Use the dropdowns below &darr; to see examples of two attributes you can edit.
@@ -176,7 +178,7 @@ The square in the middle of the widget represents the selected view. Each of the
 
 <br>
 
-### Resources
+### _Resources_
 So far you have learned how to change property values. Next, you will learn how to create more resources like the string resources you worked with earlier. Using resources enables you to use the same values in multiple places, or to define values and have the UI update automatically whenever the value is changed.
 #### Adding Color Resources
 
@@ -201,7 +203,7 @@ So far you have learned how to change property values. Next, you will learn how 
 
 <br>
 
-#### Adding a Background Color
+#### _Adding a Background Color_
 A _Color_ can be defined as 3 hexadecimal numbers (#00-#FF, or 0-255) representing the red, blue, and green (RGB) components.
 
 1. Back in `colors.xml`, create a new color resource under `<resources>` called `screenBackground` and define it as **#FFEE58**, he color you just added is yellow. Notice that the colors corresponding to the code are displayed in the left margin of the editor. In this case, you just added the color yellow.
