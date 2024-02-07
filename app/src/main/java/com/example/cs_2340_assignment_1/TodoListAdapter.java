@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.data.TodoList;
 import com.example.cs_2340_assignment_1.state.State;
 
@@ -30,9 +29,6 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
     @Override
     public TodoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mTodoEntries = getTasks();
-
-        State.getTodoLists().put("list", new TodoList("list"));
-
         View view = LayoutInflater.from(mContext)
                 .inflate(R.layout.todo_list_text_row_item, parent, false);
         return new TodoViewHolder(view);
@@ -63,11 +59,9 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.TodoVi
 
     public List<TodoList.TodoItem> getTasks() {
         List<TodoList.TodoItem> tasks = new ArrayList<>();
-        for (var k : State.getTodoLists().keySet()) {
-            var map = State.getTodoLists().get(k).getTodoList();
-            for (var k1 : map.keySet()) {
-                tasks.add(map.get(k1));
-            }
+        var map = State.getTodoList().getTodoList();
+        for (var k : map.keySet()) {
+            tasks.add(map.get(k));
         }
         Collections.sort(tasks);
         Collections.reverse(tasks);

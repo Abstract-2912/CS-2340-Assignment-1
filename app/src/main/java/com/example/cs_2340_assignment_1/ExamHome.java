@@ -100,7 +100,7 @@ public class ExamHome extends Fragment {
                         Course c = tasks.get(position).getAssociatedCourse();
                         String examName = tasks.get(position).getName();
                         c.removeExam(examName);
-                        State.update(State.getCourseMap(), State.getTodoLists());
+                        State.update(State.getCourseMap(), State.getTodoList());
 //                        courseListAdapter.setTasks(State.getCourseMap());
                     }
 

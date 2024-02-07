@@ -5,59 +5,130 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.cs_2340_assignment_1.data.TodoList;
+import com.example.cs_2340_assignment_1.databinding.TodoFragmentBinding;
+import com.example.cs_2340_assignment_1.state.State;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TodoHome#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class TodoHome extends Fragment {
+    private TodoFragmentBinding binding;
+    private TodoListAdapter todoListAdapter;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TodoHome() {
-        // Required empty public constructor
+    @Override
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
+        todoListAdapter = new TodoListAdapter(getContext());
+        binding = TodoFragmentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EigthFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TodoHome newInstance(String param1, String param2) {
-        TodoHome fragment = new TodoHome();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_toDoList);
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(
+                        recyclerView.getContext(),
+                        DividerItemDecoration.VERTICAL
+                )
+        );
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setAdapter(todoListAdapter);
+        binding.fab6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(TodoHome.this)
+                        .navigate(R.id.navigateToAddTodoItems);
+            }
+        });
+
+        binding.back.setOnClickListener(
+                e -> {
+                    NavHostFragment.findNavController(TodoHome.this)
+                            .navigate(R.id.navigateFromTodoListsToHome);
+                }
+        );
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+
+                return false; // We return false because we are not going to use it
+
+            }
+
+            // Called when a user swipes left or right on a ViewHolder
+
+            List<TodoList.TodoItem> tasks;
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+
+                //  implement swipe to delete
+
+                //get item position
+                final int position = viewHolder.getAbsoluteAdapterPosition();
+
+
+                // get list of Task
+
+                tasks = todoListAdapter.getTasks();
+
+                AppExecutor.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        TodoList.TodoItem t = tasks.get(position);
+                        State.getTodoList().removeItem(t);
+                        State.update(State.getCourseMap(), State.getTodoList());
+                    }
+                });
+                getTasks();
+            }
+        }).attachToRecyclerView(recyclerView);
+    }
+
+    private void getTasks() {
+        AppExecutor.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        todoListAdapter.setTasks();
+                    }
+                });
+            }
+        });
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onResume() {
+        super.onResume();
+        todoListAdapter.setTasks();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.todo_fragment, container, false);
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

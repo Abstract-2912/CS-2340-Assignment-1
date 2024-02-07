@@ -98,5 +98,4 @@ public class ExamAdd extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

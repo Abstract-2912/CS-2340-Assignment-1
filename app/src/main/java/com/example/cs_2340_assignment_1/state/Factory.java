@@ -40,10 +40,10 @@ public final class Factory {
         var courseMap = State.getCourseMap();
         if (courseMap.containsKey(c.getName())) { // edit a course
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         } else {
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
         return c;
     }
@@ -109,7 +109,7 @@ public final class Factory {
             c.addAssignment(a);
             c.getAssignments().put(a.getTitle(), a);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
         return a;
     }
@@ -166,7 +166,7 @@ public final class Factory {
         } else {
             c.addExam(e);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
         return e;
     }
@@ -212,7 +212,7 @@ public final class Factory {
         } else {
             c.addExam(e);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
         return e;
     }
@@ -235,27 +235,6 @@ public final class Factory {
     }
 
     /**
-     * Creates a new TodoList.
-     *
-     * @param name name of list
-     */
-    public TodoList createTodoList(
-            String name
-    ) {
-        if (State.getTodoLists().containsKey(name)) {
-            throw new IllegalArgumentException(
-                    "Todo list with name already exists! Can not be created!"
-            );
-        } else {
-            TodoList list = new TodoList(name);
-            var lists = State.getTodoLists();
-            lists.put(name, list);
-            State.update(State.getCourseMap(), lists);
-            return list;
-        }
-    }
-
-    /**
      * Creates an item inside of an existing TodoList.
      *
      * @param list     existing list
@@ -275,11 +254,7 @@ public final class Factory {
             throw new NullPointerException("List can not be null!");
         }
         list.addItem(name, priority, dueDate, notes);
-        var lists = State.getTodoLists();
-        if (lists.containsKey(list.getName())) {
-            lists.put(list.getName(), list);
-        }
-        State.update(State.getCourseMap(), State.getTodoLists());
+        State.update(State.getCourseMap(), State.getTodoList());
         return list;
     }
 }

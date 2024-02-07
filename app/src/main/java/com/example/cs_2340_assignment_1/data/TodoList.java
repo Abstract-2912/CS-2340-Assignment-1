@@ -86,7 +86,7 @@ public class TodoList {
      * @param item item
      */
     public void removeItem(TodoItem item) {
-        todoListStructure.remove(item);
+        todoListStructure.remove(item.getName());
     }
 
     /**

@@ -109,7 +109,7 @@ public class AssignmentHome extends Fragment {
                     public void run() {
                         Course c = tasks.get(position).getAssociatedCourse();
                         c.removeAssignment(tasks.get(position));
-                        State.update(State.getCourseMap(), State.getTodoLists());
+                        State.update(State.getCourseMap(), State.getTodoList());
                     }
 
                 });
