@@ -1,4 +1,4 @@
-## General Information
+## 🧑‍🏫 General Information
 There are given a lot of android widgets such as _Button_, _EditText_, _AutoCompleteTextView_,
 _ToggleButton_, _DatePicker_, _TimePicker_, _ProgressBar_, etc. that can be implemented onto the UI.
 
@@ -13,9 +13,3 @@ _ToggleButton_, _DatePicker_, _TimePicker_, _ProgressBar_, etc. that can be impl
 - **DatePicker**: Displays the datepicker dialog that can be used to pick the date.
 - **TimePicker**: Displays the timepicker dialog that can be used to pick the date.
 - **ProgressBar**: Displays the progress of the task.
-
-<br>
-
-### Button
-Android Button represents a _push-button_. The android.widget.Button is subclass of **TextView** class and CompoundButton is the subclass of **Button** class.
-There are different types of buttons in android such as **RadioButton**, **ToggleButton**, **CompoundButton**, etc.
