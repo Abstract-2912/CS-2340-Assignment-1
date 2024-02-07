@@ -123,7 +123,7 @@ The **Next** button already has its text in a string resource, but you'll make s
 
 ### Step 6: Prepare UI for Next Task
 The next task is to make the buttons do something when they are pressed. First, you need to get the UI ready.
-1. Change the text of the TextView to show the number **0**.
+1. Change the text of the TextView to show the number **0** by going to `strings.xml`, finding `<string name="lorem_ipsum">`, and changing `Hello World!`.
 2. _(Skip this step if done before)_ Change the **id** of the last button you added, `button`, to `count_button` in the **_Attributes_** panel.
 3. _(Skip this step if done before)_ In the XML, extract the string resource to `count_button_text` and set the value to **Count**.
 
