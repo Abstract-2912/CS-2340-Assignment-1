@@ -6,13 +6,13 @@ to run this app.
 On the left side of the window, the app's files are displayed in a hierarchy. The app folder should contain three folders: **manifests**, **java**, and **res**.
 
 _Let's explore each one!_
-### manifests
+### _manifests_
 This folder contains the AndroidManifest.xml file. This file describes all the 
 components of your Android app, which the Android runtime system when you 
 execute your app.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/78f8eb73-2138-4a0c-bfb2-4c4cae79df15" width="50%" height="50%"></p>
 
-### java
+### _java_
 This folder contains all your Java language files. This folder contains all your Java language files with three subfolders: **com**, **com** (androidTest), and **com** (test). 
 - **com**: This folder contains the Java source code files for your app.
 - **com** (androidTest): This folder is where you would put your _instrumented tests_,
@@ -22,7 +22,7 @@ don't need an Android device to run.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/ab07f914-9409-4dcc-94c9-fb1d317dc706" width="30%" height="30%"></p>
 
 
-### res
+### _res_
 This folder is where you store all non-code resources, such as images, strings, 
 and XML layouts. These resources are maintained separately from your source code
 so they can be updated independently. It contains the following subfolders:
@@ -71,7 +71,7 @@ toolbar). <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-A
 
 <br>
 
-## :arrow_forward: Run Your App
+## :runner: Run Your App
 Congratulations! You've just configured your first Android project! Now, let's try running your app on your new emulator.
 
 1. Select **Run** > **Run 'app'** (or the **Run** icon in the toolbar).
