@@ -1,7 +1,8 @@
-## Interactivity
+## :twisted_rightwards_arrows: Interactivity
 You have added buttons to your app's main screen, but currently the buttons do nothing. So, let's make your buttons respond when the user presses them.
 
-### Step 1: Enable Auto Imports
+
+### _Step 1: Enable Auto Imports_
 To make your life easier, you can enable auto-imports so that Android Studio automatically imports any classes that are needed by the Java code.
 
 1. In Android Studio, open the settings editor by going to **File** > **Settings** > **Editor** > **General**.
@@ -13,7 +14,7 @@ To make your life easier, you can enable auto-imports so that Android Studio aut
 <br>
 
 
-### Step 2: Show a 'Toast'
+### _Step 2: Show a 'Toast'_
 Now, you will attach a Java method to the Toast button to show a _toast_ when the user presses the button. A _toast_ is a short message that appears briefly at the bottom of the screen.
 
 1. Open FirstFragment.java (**app** > **java** > **com** > **example** > **myfirstapp** > **FirstFragment**). 
@@ -58,7 +59,7 @@ public void onClick(View view) {
 <br>
 
 
-### Step 3: Add Behavior
+### _Step 3: Add Behavior_
 The method that shows the toast is very simple; it does not interact with any other views in the layout. In the next step, you add behavior to your layout to find and update other views.
 **Goal**: Update the **Count** button so that when it is pressed, the number on the screen increases by 1.
 1. In the `fragment_first.xml` layout file, notice the **id** for the `TextView`:
@@ -126,7 +127,7 @@ private void countMe(View view) {
 <br>
 
 
-### Step 4: Cache for Repeated Use
+### _Step 4: Cache for Repeated Use_
 1. In the `FirstFragment` class before any methods, add a member variable for `showCountTextView` of type `TextView`.
 ```angular2html
 TextView showCountTextView;
@@ -157,7 +158,7 @@ public View onCreateView(
 
 <br>
 
-_**Congratulations**!_ You're done :party:!
+### _**Congratulations**!_ You're done with the tutorial :ghost: :tada:!
 
 
 
