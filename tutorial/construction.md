@@ -1,8 +1,8 @@
-## Constructing Buttons
+## :nut_and_bolt: Constructing Buttons
 First of all, what is a _Button_? In general, it is a widget that performs an event on button click. Let's find out how to construct them!
 > For more information on Buttons, click [**here**](information.md) or alternatively, navigate to the `information.md` file in this repository.
 
-### Step 1: Adding a Button
+### _Step 1: Adding a Button_
 To learn how to use constraints to connect the positions of views to each other, you will add buttons to the layout.
 1. From the **_Palette_** panel from the _Layout Editor_, click on the **Common** category.
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/07c349e7-900e-4166-ac6e-b1bf06a3c2e8" width="30%" height="30%"></p>
@@ -14,7 +14,7 @@ To learn how to use constraints to connect the positions of views to each other,
 
 <br>
 
-### Step 2: Constraining the Button
+### _Step 2: Constraining the Button_
 You will now constrain the right side of the button to the left side of the **Next** button.
 1. Move the cursor over the circle at the right of the `Button`.
 2. Click and drag the circle at the right of the `Button` onto the circle at the left of the **Next** button. The `Button` should now move down to sit just next to the **Next** button because the side of the button is now _constrained_ to the side of the **Next** button.
@@ -33,7 +33,7 @@ You will now constrain the right side of the button to the left side of the **Ne
 
 <br>
 
-### Step 3: Deleting Constraints
+### _Step 3: Deleting Constraints_
 #### Single Constraint
 You may do any of the following:
 - In the design view or blueprint view, hold the `Ctrl` key (`Command` on a Mac) and move the cursor over the circle for the constraint until the circle highlights, then click the circle.
@@ -55,7 +55,7 @@ You will adjust the button labeled **Next**, which Android Studio created for yo
 
 <br>
 
-### Step 4: Extracting String Resources
+### _Step 4: Extracting String Resources_
 1. In the `fragment_first.xml` layout file, find the text property for the `toast_button` button. 
 ```angular2html
 <Button 
@@ -87,7 +87,7 @@ android:text="@string/toast_button_text"
 
 <br>
 
-### Step 5: Update the Next Button
+### _Step 5: Update the Next Button_
 The **Next** button already has its text in a string resource, but you'll make some changes to the button to match its new role, which will be to generate and display a random number.
 1. As you did for the **Toast** button, change the **id** of the **Next** button from `button_first` to `random_button` in the **_Attributes_** panel. (If you get a dialog box asking to update all usages of the button, click **Refactor**. This will fix any other references to the button in the project code.)
 <p align="center"><img src="https://github.com/Abstract-2912/CS-2340-Assignment-1/assets/156847930/a058568a-4cbb-494b-88a2-fbf2e4466a69" width="30%" height="30%"></p>
@@ -121,7 +121,7 @@ The **Next** button already has its text in a string resource, but you'll make s
 
 <br>
 
-### Step 6: Prepare UI for Interactivity
+### _Step 6: Prepare UI for Interactivity_
 The next task is to make the buttons do something when they are pressed. First, you need to get the UI ready.
 1. Change the text of the TextView to show the number **0** by going to `strings.xml`, finding `<string name="lorem_ipsum">`, and changing `Hello World!`.
 2. _(Skip this step if done before)_ Change the **id** of the last button you added, `button`, to `count_button` in the **_Attributes_** panel.
