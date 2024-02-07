@@ -11,9 +11,6 @@ To make your life easier, you can enable auto-imports so that Android Studio aut
 
 <br>
 
-<br>
-
-
 ### _Step 2: Show a 'Toast'_
 Now, you will attach a Java method to the Toast button to show a _toast_ when the user presses the button. A _toast_ is a short message that appears briefly at the bottom of the screen.
 
@@ -53,8 +50,6 @@ public void onClick(View view) {
 > To make a view interactive, you need to set up a click listener for the view which says what to do when the view (button) is clicked on. The click listener can either:
 > - Implement a small amount of code directly. 
 > - Call a method that defines the desired click behavior in the activity.
-
-<br>
 
 <br>
 
@@ -123,9 +118,6 @@ private void countMe(View view) {
 ```
 
 <br>
-
-<br>
-
 
 ### _Step 4: Cache for Repeated Use_
 1. In the `FirstFragment` class before any methods, add a member variable for `showCountTextView` of type `TextView`.
