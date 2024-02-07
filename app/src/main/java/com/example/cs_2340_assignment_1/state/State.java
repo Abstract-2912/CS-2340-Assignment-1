@@ -30,6 +30,10 @@ public final class State {
     private static TodoList todoList = new TodoList("list");
 
     // METHODS
+    public static Factory getFactory() {
+        return factory;
+    }
+
     public static HashMap<String, Course> getCourseMap() {
         return courseMap;
     }
