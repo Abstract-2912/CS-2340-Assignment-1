@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.adapter.TodoListAdapter;
 import com.example.cs_2340_assignment_1.data.TodoList;
 import com.example.cs_2340_assignment_1.databinding.TodoAddFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;

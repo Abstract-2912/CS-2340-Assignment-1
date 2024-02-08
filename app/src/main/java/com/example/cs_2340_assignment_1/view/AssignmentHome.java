@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs_2340_assignment_1.AppExecutor;
 import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.adapter.AssignmentListAdapter;
 import com.example.cs_2340_assignment_1.data.Assignment;
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.databinding.AssignmentFragmentBinding;

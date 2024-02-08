@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1.view;
+package com.example.cs_2340_assignment_1.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

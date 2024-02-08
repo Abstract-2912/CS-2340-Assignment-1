@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1.view;
+package com.example.cs_2340_assignment_1;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

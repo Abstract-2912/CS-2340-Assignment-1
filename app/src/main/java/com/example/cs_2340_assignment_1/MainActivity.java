@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1.view;
+package com.example.cs_2340_assignment_1;
 
 import android.os.Bundle;
 import android.view.Menu;
