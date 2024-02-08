@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,18 +13,21 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cs_2340_assignment_1.data.TodoList;
-import com.example.cs_2340_assignment_1.databinding.TodoFragmentBinding;
+import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.data.Course;
+import com.example.cs_2340_assignment_1.data.Exam;
+import com.example.cs_2340_assignment_1.databinding.ExamFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TodoHome extends Fragment {
-    private TodoFragmentBinding binding;
-    private TodoListAdapter todoListAdapter;
+public class ExamHome extends Fragment {
+    private ExamFragmentBinding binding;
+    private ExamListAdapter examListAdapter;
 
 
     @Override
@@ -32,14 +35,14 @@ public class TodoHome extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        todoListAdapter = new TodoListAdapter(getContext());
-        binding = TodoFragmentBinding.inflate(inflater, container, false);
+        examListAdapter = new ExamListAdapter(getContext());
+        binding = ExamFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_toDoList);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_exams);
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(
                         recyclerView.getContext(),
@@ -51,19 +54,19 @@ public class TodoHome extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setAdapter(todoListAdapter);
-        binding.fab6.setOnClickListener(new View.OnClickListener() {
+        recyclerView.setAdapter(examListAdapter);
+        binding.fab5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(TodoHome.this)
-                        .navigate(R.id.navigateToAddTodoItems);
+                NavHostFragment.findNavController(ExamHome.this)
+                        .navigate(R.id.navigateToAddExam);
             }
         });
 
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(TodoHome.this)
-                            .navigate(R.id.navigateFromTodoListsToHome);
+                    NavHostFragment.findNavController(ExamHome.this)
+                            .navigate(R.id.navigateFromExamsToHome);
                 }
         );
 
@@ -78,8 +81,6 @@ public class TodoHome extends Fragment {
 
             // Called when a user swipes left or right on a ViewHolder
 
-            List<TodoList.TodoItem> tasks;
-
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
 
@@ -91,29 +92,43 @@ public class TodoHome extends Fragment {
 
                 // get list of Task
 
-                tasks = todoListAdapter.getTasks();
+                final List<Exam> tasks = examListAdapter.getTasks();
 
                 AppExecutor.getInstance().diskIO().execute(new Runnable() {
+
                     @Override
                     public void run() {
-                        TodoList.TodoItem t = tasks.get(position);
-                        State.getTodoList().removeItem(t);
+                        Course c = tasks.get(position).getAssociatedCourse();
+                        String examName = tasks.get(position).getName();
+                        c.removeExam(examName);
                         State.update(State.getCourseMap(), State.getTodoList());
+//                        courseListAdapter.setTasks(State.getCourseMap());
                     }
+
                 });
+
                 getTasks();
+
             }
+
         }).attachToRecyclerView(recyclerView);
     }
 
     private void getTasks() {
+
         AppExecutor.getInstance().diskIO().execute(new Runnable() {
             @Override
+
             public void run() {
+
+                final PriorityQueue<Exam> tasks = State.getExamsPriorityQueue();
+
+
                 getActivity().runOnUiThread(new Runnable() {
+
                     @Override
                     public void run() {
-                        todoListAdapter.setTasks();
+                        examListAdapter.setTasks(tasks);
                     }
                 });
             }
@@ -123,7 +138,7 @@ public class TodoHome extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        todoListAdapter.setTasks();
+        examListAdapter.setTasks(State.getExamsPriorityQueue());
     }
 
     @Override

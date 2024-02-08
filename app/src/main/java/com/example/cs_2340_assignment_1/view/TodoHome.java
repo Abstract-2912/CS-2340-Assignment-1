@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,33 +13,34 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cs_2340_assignment_1.data.Assignment;
-import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.databinding.AssignmentFragmentBinding;
+import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.data.TodoList;
+import com.example.cs_2340_assignment_1.databinding.TodoFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
-import java.util.HashMap;
 import java.util.List;
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class TodoHome extends Fragment {
+    private TodoFragmentBinding binding;
+    private TodoListAdapter todoListAdapter;
 
-public class AssignmentHome extends Fragment {
-    private AssignmentFragmentBinding binding;
-    private static AssignmentListAdapter assignmentListAdapter;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        assignmentListAdapter = new AssignmentListAdapter(getContext());
-        binding = AssignmentFragmentBinding.inflate(inflater, container, false);
+        todoListAdapter = new TodoListAdapter(getContext());
+        binding = TodoFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_assignments);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_toDoList);
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(
                         recyclerView.getContext(),
@@ -51,31 +52,19 @@ public class AssignmentHome extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setAdapter(assignmentListAdapter);
-        binding.fab4.setOnClickListener(new View.OnClickListener() {
+        recyclerView.setAdapter(todoListAdapter);
+        binding.fab6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(AssignmentHome.this)
-                        .navigate(R.id.navigateToAddAssignment);
+                NavHostFragment.findNavController(TodoHome.this)
+                        .navigate(R.id.navigateToAddTodoItems);
             }
         });
 
-        binding.sortByDate.setOnClickListener(
-                e -> {
-                    assignmentListAdapter.setSortingManner(true);
-                }
-        );
-
-        binding.sortByClass.setOnClickListener(
-                e -> {
-                    assignmentListAdapter.setSortingManner(false);
-                }
-        );
-
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(AssignmentHome.this)
-                            .navigate(R.id.navigateFromAssignmentsToHome);
+                    NavHostFragment.findNavController(TodoHome.this)
+                            .navigate(R.id.navigateFromTodoListsToHome);
                 }
         );
 
@@ -90,6 +79,8 @@ public class AssignmentHome extends Fragment {
 
             // Called when a user swipes left or right on a ViewHolder
 
+            List<TodoList.TodoItem> tasks;
+
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
 
@@ -101,51 +92,39 @@ public class AssignmentHome extends Fragment {
 
                 // get list of Task
 
-                final List<Assignment> tasks = assignmentListAdapter.getTasks(assignmentListAdapter.getSortingManner());
+                tasks = todoListAdapter.getTasks();
 
                 AppExecutor.getInstance().diskIO().execute(new Runnable() {
-
                     @Override
                     public void run() {
-                        Course c = tasks.get(position).getAssociatedCourse();
-                        c.removeAssignment(tasks.get(position));
+                        TodoList.TodoItem t = tasks.get(position);
+                        State.getTodoList().removeItem(t);
                         State.update(State.getCourseMap(), State.getTodoList());
                     }
-
                 });
-
                 getTasks();
-
             }
-
         }).attachToRecyclerView(recyclerView);
     }
 
     private void getTasks() {
         AppExecutor.getInstance().diskIO().execute(new Runnable() {
             @Override
-
             public void run() {
-                final HashMap<String, Assignment> tasks = State.getAssignmentsMap();
                 getActivity().runOnUiThread(new Runnable() {
-
                     @Override
                     public void run() {
-                        assignmentListAdapter.setTasks(tasks);
+                        todoListAdapter.setTasks();
                     }
                 });
             }
         });
     }
 
-    public static AssignmentListAdapter getAssignmentListAdapter() {
-        return assignmentListAdapter;
-    }
-
     @Override
     public void onResume() {
         super.onResume();
-        assignmentListAdapter.setTasks(new HashMap<>());
+        todoListAdapter.setTasks();
     }
 
     @Override
@@ -153,5 +132,4 @@ public class AssignmentHome extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

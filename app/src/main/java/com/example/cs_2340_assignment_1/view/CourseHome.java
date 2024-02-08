@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,35 +13,32 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs_2340_assignment_1.R;
 import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.data.Exam;
-import com.example.cs_2340_assignment_1.databinding.ExamFragmentBinding;
+import com.example.cs_2340_assignment_1.databinding.CourseFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.PriorityQueue;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class ExamHome extends Fragment {
-    private ExamFragmentBinding binding;
-    private ExamListAdapter examListAdapter;
+public class CourseHome extends Fragment {
 
+    private CourseFragmentBinding binding;
+    private CourseListAdapter courseListAdapter;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        examListAdapter = new ExamListAdapter(getContext());
-        binding = ExamFragmentBinding.inflate(inflater, container, false);
+        courseListAdapter = new CourseListAdapter(getContext());
+        binding = CourseFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_exams);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_main);
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(
                         recyclerView.getContext(),
@@ -53,22 +50,21 @@ public class ExamHome extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setAdapter(examListAdapter);
-        binding.fab5.setOnClickListener(new View.OnClickListener() {
+        recyclerView.setAdapter(courseListAdapter);
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ExamHome.this)
-                        .navigate(R.id.navigateToAddExam);
+                NavHostFragment.findNavController(CourseHome.this)
+                        .navigate(R.id.navigateFromCoursesToHome);
             }
         });
 
         binding.back.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(ExamHome.this)
-                            .navigate(R.id.navigateFromExamsToHome);
+                    NavHostFragment.findNavController(CourseHome.this)
+                            .navigate(R.id.navigateToAddCourse);
                 }
         );
-
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
 
@@ -91,16 +87,13 @@ public class ExamHome extends Fragment {
 
                 // get list of Task
 
-                final List<Exam> tasks = examListAdapter.getTasks();
+                final List<Course> tasks = courseListAdapter.getTasks();
 
                 AppExecutor.getInstance().diskIO().execute(new Runnable() {
 
                     @Override
                     public void run() {
-                        Course c = tasks.get(position).getAssociatedCourse();
-                        String examName = tasks.get(position).getName();
-                        c.removeExam(examName);
-                        State.update(State.getCourseMap(), State.getTodoList());
+                        State.getCourseMap().remove(tasks.get(position).getName());
 //                        courseListAdapter.setTasks(State.getCourseMap());
                     }
 
@@ -120,14 +113,14 @@ public class ExamHome extends Fragment {
 
             public void run() {
 
-                final PriorityQueue<Exam> tasks = State.getExamsPriorityQueue();
+                final HashMap<String, Course> tasks = State.getCourseMap();
 
 
                 getActivity().runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
-                        examListAdapter.setTasks(tasks);
+                        courseListAdapter.setTasks(tasks);
                     }
                 });
             }
@@ -137,7 +130,7 @@ public class ExamHome extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        examListAdapter.setTasks(State.getExamsPriorityQueue());
+        courseListAdapter.setTasks(State.getCourseMap());
     }
 
     @Override
@@ -145,4 +138,5 @@ public class ExamHome extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }

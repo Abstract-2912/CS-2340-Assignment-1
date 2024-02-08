@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,31 +13,34 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.data.Assignment;
 import com.example.cs_2340_assignment_1.data.Course;
-import com.example.cs_2340_assignment_1.databinding.CourseFragmentBinding;
+import com.example.cs_2340_assignment_1.databinding.AssignmentFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class CourseHome extends Fragment {
 
-    private CourseFragmentBinding binding;
-    private CourseListAdapter courseListAdapter;
+public class AssignmentHome extends Fragment {
+    private AssignmentFragmentBinding binding;
+    private static AssignmentListAdapter assignmentListAdapter;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        courseListAdapter = new CourseListAdapter(getContext());
-        binding = CourseFragmentBinding.inflate(inflater, container, false);
+        assignmentListAdapter = new AssignmentListAdapter(getContext());
+        binding = AssignmentFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_main);
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_assignments);
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(
                         recyclerView.getContext(),
@@ -49,21 +52,34 @@ public class CourseHome extends Fragment {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        recyclerView.setAdapter(courseListAdapter);
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        recyclerView.setAdapter(assignmentListAdapter);
+        binding.fab4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(CourseHome.this)
-                        .navigate(R.id.navigateFromCoursesToHome);
+                NavHostFragment.findNavController(AssignmentHome.this)
+                        .navigate(R.id.navigateToAddAssignment);
             }
         });
 
-        binding.back.setOnClickListener(
+        binding.sortByDate.setOnClickListener(
                 e -> {
-                    NavHostFragment.findNavController(CourseHome.this)
-                            .navigate(R.id.navigateToAddCourse);
+                    assignmentListAdapter.setSortingManner(true);
                 }
         );
+
+        binding.sortByClass.setOnClickListener(
+                e -> {
+                    assignmentListAdapter.setSortingManner(false);
+                }
+        );
+
+        binding.back.setOnClickListener(
+                e -> {
+                    NavHostFragment.findNavController(AssignmentHome.this)
+                            .navigate(R.id.navigateFromAssignmentsToHome);
+                }
+        );
+
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
 
@@ -86,14 +102,15 @@ public class CourseHome extends Fragment {
 
                 // get list of Task
 
-                final List<Course> tasks = courseListAdapter.getTasks();
+                final List<Assignment> tasks = assignmentListAdapter.getTasks(assignmentListAdapter.getSortingManner());
 
                 AppExecutor.getInstance().diskIO().execute(new Runnable() {
 
                     @Override
                     public void run() {
-                        State.getCourseMap().remove(tasks.get(position).getName());
-//                        courseListAdapter.setTasks(State.getCourseMap());
+                        Course c = tasks.get(position).getAssociatedCourse();
+                        c.removeAssignment(tasks.get(position));
+                        State.update(State.getCourseMap(), State.getTodoList());
                     }
 
                 });
@@ -106,30 +123,30 @@ public class CourseHome extends Fragment {
     }
 
     private void getTasks() {
-
         AppExecutor.getInstance().diskIO().execute(new Runnable() {
             @Override
 
             public void run() {
-
-                final HashMap<String, Course> tasks = State.getCourseMap();
-
-
+                final HashMap<String, Assignment> tasks = State.getAssignmentsMap();
                 getActivity().runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
-                        courseListAdapter.setTasks(tasks);
+                        assignmentListAdapter.setTasks(tasks);
                     }
                 });
             }
         });
     }
 
+    public static AssignmentListAdapter getAssignmentListAdapter() {
+        return assignmentListAdapter;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        courseListAdapter.setTasks(State.getCourseMap());
+        assignmentListAdapter.setTasks(new HashMap<>());
     }
 
     @Override

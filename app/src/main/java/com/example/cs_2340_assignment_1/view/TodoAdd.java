@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.cs_2340_assignment_1.R;
 import com.example.cs_2340_assignment_1.data.TodoList;
 import com.example.cs_2340_assignment_1.databinding.TodoAddFragmentBinding;
 import com.example.cs_2340_assignment_1.state.State;

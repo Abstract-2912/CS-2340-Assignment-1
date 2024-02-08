@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cs_2340_assignment_1.R;
 import com.example.cs_2340_assignment_1.data.Course;
 import com.example.cs_2340_assignment_1.state.State;
 

@@ -1,4 +1,4 @@
-package com.example.cs_2340_assignment_1;
+package com.example.cs_2340_assignment_1.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,13 +11,13 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cs_2340_assignment_1.data.Course;
+import com.example.cs_2340_assignment_1.R;
+import com.example.cs_2340_assignment_1.Utils;
 import com.example.cs_2340_assignment_1.data.Exam;
 import com.example.cs_2340_assignment_1.state.State;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 
