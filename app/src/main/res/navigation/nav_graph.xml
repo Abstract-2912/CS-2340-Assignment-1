@@ -3,26 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/Home">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.cs_2340_assignment_1.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/Home"
+        android:name="com.example.cs_2340_assignment_1.view.Home"
+        android:label="Home"
+        tools:layout="@layout/home_fragment">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/navigateFromHomeToCourses"
+            app:destination="@id/Courses" />
+        <action
+            android:id="@+id/navigateFromHomeToAssignments"
+            app:destination="@id/Assignments" />
+        <action
+            android:id="@+id/navigateFromHomeToExams"
+            app:destination="@id/Exams" />
+        <action
+            android:id="@+id/navigateFromHomeToTodoLists"
+            app:destination="@id/TodoList" />
+
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.cs_2340_assignment_1.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/Courses"
+        android:name="com.example.cs_2340_assignment_1.view.CourseHome"
+        android:label="Courses"
+        tools:layout="@layout/course_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/navigateFromCoursesToHome"
+            app:destination="@id/AddCourse" />
+        <action
+            android:id="@+id/navigateToAddCourse"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddCourse"
+        android:name="com.example.cs_2340_assignment_1.view.CourseAdd"
+        android:label="Add Course"
+        tools:layout="@layout/course_add_fragment" >
+        <action
+            android:id="@+id/navigateToCourses"
+            app:destination="@id/Courses" />
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/Assignments"
+        android:name="com.example.cs_2340_assignment_1.view.AssignmentHome"
+        android:label="Assignments"
+        tools:layout="@layout/assignment_fragment" >
+        <action
+            android:id="@+id/navigateFromAssignmentsToHome"
+            app:destination="@id/Home" />
+        <action
+            android:id="@+id/navigateToAddAssignment"
+            app:destination="@id/AddAssignment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddAssignment"
+        android:name="com.example.cs_2340_assignment_1.view.AssignmentAdd"
+        android:label="Add Assignment"
+        tools:layout="@layout/assignment_add_fragment" >
+        <action
+            android:id="@+id/navigateToAssignments"
+            app:destination="@id/Assignments" />
+    </fragment>
+    <fragment
+        android:id="@+id/Exams"
+        android:name="com.example.cs_2340_assignment_1.view.ExamHome"
+        android:label="Exam"
+        tools:layout="@layout/exam_fragment" >
+        <action
+            android:id="@+id/navigateToAddExam"
+            app:destination="@id/AddExam" />
+        <action
+            android:id="@+id/navigateFromExamsToHome"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddExam"
+        android:name="com.example.cs_2340_assignment_1.view.ExamAdd"
+        android:label="Add Exam"
+        tools:layout="@layout/exam_add_fragment">
+        <action
+            android:id="@+id/navigateToExams"
+            app:destination="@id/Exams" />
+    </fragment>
+    <fragment
+        android:id="@+id/TodoList"
+        android:name="com.example.cs_2340_assignment_1.view.TodoHome"
+        android:label="Todo List"
+        tools:layout="@layout/todo_fragment" >
+        <action
+            android:id="@+id/navigateFromTodoListsToHome"
+            app:destination="@id/Home" />
+        <action
+            android:id="@+id/navigateToAddTodoItems"
+            app:destination="@id/AddTodoItems" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddTodoItems"
+        android:name="com.example.cs_2340_assignment_1.view.TodoAdd"
+        android:label="Add Item"
+        tools:layout="@layout/todo_add_fragment" >
+        <action
+            android:id="@+id/navigateToTodoLists"
+            app:destination="@id/TodoList" />
     </fragment>
 </navigation>

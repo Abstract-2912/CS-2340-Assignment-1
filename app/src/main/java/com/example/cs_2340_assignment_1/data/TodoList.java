@@ -1,6 +1,7 @@
 package com.example.cs_2340_assignment_1.data;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 
 /**
@@ -20,28 +21,28 @@ public class TodoList {
     /**
      * Underlying priority queue for TodoList
      */
-    private final PriorityQueue<TodoItem> todoListStructure;
+    private final HashMap<String, TodoItem> todoListStructure;
 
     /**
      * Constructs a TodoList off of an existing priority queue.
      *
      * @param todoListStructure list priority queue
      */
-    public TodoList(String name, PriorityQueue<TodoItem> todoListStructure) {
+    public TodoList(String name, HashMap<String, TodoItem> todoListStructure) {
         if (name == null) {
             throw new NullPointerException("List name can not be null!");
         } else if (name.isEmpty() || name.isBlank()) {
             throw new IllegalArgumentException("List name can not be empty!");
         }
         this.name = name;
-        this.todoListStructure = new PriorityQueue<>(todoListStructure);
+        this.todoListStructure = new HashMap<>(todoListStructure);
     }
 
     /**
      * Default TodoList constructor.
      */
     public TodoList(String name) {
-        this(name, new PriorityQueue<>());
+        this(name, new HashMap<>());
     }
 
     /**
@@ -54,7 +55,7 @@ public class TodoList {
      */
     public void addItem(String name, int priority, Timestamp dueDate, String notes) {
         TodoItem item = new TodoItem(name, priority, dueDate, notes);
-        todoListStructure.add(item);
+        todoListStructure.put(name, item);
     }
 
     /**
@@ -63,7 +64,7 @@ public class TodoList {
      * @param item item
      */
     public void addItem(TodoItem item) {
-        todoListStructure.add(item);
+        todoListStructure.put(item.getName(), item);
     }
 
     /**
@@ -85,7 +86,7 @@ public class TodoList {
      * @param item item
      */
     public void removeItem(TodoItem item) {
-        todoListStructure.remove(item);
+        todoListStructure.remove(item.getName());
     }
 
     /**
@@ -102,7 +103,7 @@ public class TodoList {
      *
      * @return priority queue
      */
-    public PriorityQueue<TodoItem> getTodoList() {
+    public HashMap<String, TodoItem> getTodoList() {
         return todoListStructure;
     }
 
@@ -112,7 +113,7 @@ public class TodoList {
      * @see Timestamp
      * @see Comparable
      */
-    private static class TodoItem implements Comparable<TodoItem> {
+    public static class TodoItem implements Comparable<TodoItem> {
 
         /**
          * Item name (required)

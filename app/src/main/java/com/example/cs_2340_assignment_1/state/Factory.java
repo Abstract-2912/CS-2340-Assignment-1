@@ -20,7 +20,7 @@ import java.util.List;
  * @see Exam
  * @see TodoList
  */
-final class Factory {
+public final class Factory {
 
     /**
      * Creates a course with parameters.
@@ -30,22 +30,22 @@ final class Factory {
      * @param courseTimes    course times
      * @param notes          notes
      */
-    public void createCourse(
+    public Course createCourse(
             String name,
             String instructorName,
-            List<Timestamp[]> courseTimes,
+            List<String> courseTimes,
             String notes
     ) {
         Course c = new Course(name, instructorName, courseTimes, notes);
         var courseMap = State.getCourseMap();
-        if (courseMap.containsKey(c.getName())) {
-            throw new IllegalArgumentException(
-                    "Course with name already exists! Course can not be created!"
-            );
+        if (courseMap.containsKey(c.getName())) { // edit a course
+            courseMap.put(c.getName(), c);
+            State.update(courseMap, State.getTodoList());
         } else {
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
+        return c;
     }
 
     /**
@@ -55,8 +55,8 @@ final class Factory {
      * @param instructorName instructor name
      * @param courseTimes    course times
      */
-    public void createCourse(String name, String instructorName, List<Timestamp[]> courseTimes) {
-        createCourse(name, instructorName, courseTimes, "");
+    public Course createCourse(String name, String instructorName, List<String> courseTimes) {
+        return createCourse(name, instructorName, courseTimes, "");
     }
 
     /**
@@ -65,8 +65,8 @@ final class Factory {
      * @param name           name
      * @param instructorName instructor name
      */
-    public void createCourse(String name, String instructorName) { // not recommended
-        createCourse(name, instructorName, new ArrayList<>());
+    public Course createCourse(String name, String instructorName) { // not recommended
+        return createCourse(name, instructorName, new ArrayList<>());
     }
 
     /**
@@ -74,8 +74,8 @@ final class Factory {
      *
      * @param name name
      */
-    public void createCourse(String name) { // not recommended
-        createCourse(name, "");
+    public Course createCourse(String name) { // not recommended
+        return createCourse(name, "");
     }
 
     /**
@@ -87,7 +87,7 @@ final class Factory {
      * @param dueDate          due date
      * @param notes            notes
      */
-    public void createAssignment(
+    public Assignment createAssignment(
             String title,
             Course associatedCourse,
             Timestamp assignedDate,
@@ -107,9 +107,11 @@ final class Factory {
             throw new IllegalArgumentException("Associated class does not exist!");
         } else {
             c.addAssignment(a);
+            c.getAssignments().put(a.getTitle(), a);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
+        return a;
     }
 
     /**
@@ -120,13 +122,13 @@ final class Factory {
      * @param dueDate          due date
      * @param notes            notes
      */
-    public void createAssignment(
+    public Assignment createAssignment(
             String title,
             Course associatedCourse,
             Timestamp dueDate,
             String notes
     ) {
-        createAssignment(title, associatedCourse, null, dueDate, notes);
+        return createAssignment(title, associatedCourse, null, dueDate, notes);
     }
 
     /**
@@ -136,8 +138,8 @@ final class Factory {
      * @param associatedCourse associated course
      * @param dueDate          due date
      */
-    public void createAssignment(String title, Course associatedCourse, Timestamp dueDate) {
-        createAssignment(title, associatedCourse, dueDate, "");
+    public Assignment createAssignment(String title, Course associatedCourse, Timestamp dueDate) {
+        return createAssignment(title, associatedCourse, dueDate, "");
     }
 
     /**
@@ -149,7 +151,7 @@ final class Factory {
      * @param endTime          end time
      * @param notes            notes
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
@@ -164,8 +166,9 @@ final class Factory {
         } else {
             c.addExam(e);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
+        return e;
     }
 
     /**
@@ -176,13 +179,13 @@ final class Factory {
      * @param startTime        start time
      * @param endTime          end time
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
             Timestamp endTime
     ) {
-        createExam(name, associatedCourse, startTime, endTime, "");
+        return createExam(name, associatedCourse, startTime, endTime, "");
     }
 
     /**
@@ -194,7 +197,7 @@ final class Factory {
      * @param duration         duration
      * @param notes            notes
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
@@ -209,8 +212,9 @@ final class Factory {
         } else {
             c.addExam(e);
             courseMap.put(c.getName(), c);
-            State.update(courseMap, State.getTodoLists());
+            State.update(courseMap, State.getTodoList());
         }
+        return e;
     }
 
     /**
@@ -221,33 +225,13 @@ final class Factory {
      * @param startTime        start time
      * @param duration         duration
      */
-    public void createExam(
+    public Exam createExam(
             String name,
             Course associatedCourse,
             Timestamp startTime,
             Time duration
     ) {
-        createExam(name, associatedCourse, startTime, duration, "");
-    }
-
-    /**
-     * Creates a new TodoList.
-     *
-     * @param name name of list
-     */
-    public void createTodoList(
-            String name
-    ) {
-        if (State.getTodoLists().containsKey(name)) {
-            throw new IllegalArgumentException(
-                    "Todo list with name already exists! Can not be created!"
-            );
-        } else {
-            TodoList list = new TodoList(name);
-            var lists = State.getTodoLists();
-            lists.put(name, list);
-            State.update(State.getCourseMap(), lists);
-        }
+        return createExam(name, associatedCourse, startTime, duration, "");
     }
 
     /**
@@ -259,7 +243,7 @@ final class Factory {
      * @param dueDate  due date
      * @param notes    notes
      */
-    public void createTodoListItem(
+    public TodoList createTodoListItem(
             TodoList list,
             String name,
             int priority,
@@ -270,10 +254,7 @@ final class Factory {
             throw new NullPointerException("List can not be null!");
         }
         list.addItem(name, priority, dueDate, notes);
-        var lists = State.getTodoLists();
-        if (lists.containsKey(list.getName())) {
-            lists.put(list.getName(), list);
-        }
-        State.update(State.getCourseMap(), State.getTodoLists());
+        State.update(State.getCourseMap(), State.getTodoList());
+        return list;
     }
 }

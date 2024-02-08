@@ -6,6 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="addCourse">Add Course</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -43,4 +44,54 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="Courses">
+        Courses
+    </string>
+    <string name="todolist">
+        To-Do
+    </string>
+    <string name="Welcometext">
+        College Scheduler App
+    </string>
+    <string name="view_assignments">
+        View Assignments
+</string>
+    <string name="view_exams">
+        View Exams
+</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="linear_layout_manager">LinearLayout</string>
+    <string name="grid_layout_manager">GridLayout</string>
+
+
+    <!-- Strings for AddTaskActivity -->
+    <!-- This etaskEntrytask has a unicode character for "..." = "&#8230;" -->
+    <string name="courseDescription">Enter your Course</string>
+    <string name="courseDescription2">Enter Course Time</string>
+    <string name="instructor">Enter your Instructor</string>
+    <string name="priority_string">Priority</string>
+
+    <string name="high_priority">High</string>
+    <string name="med_priority">Medium</string>
+    <string name="low_priority">Low</string>
+
+    <string name="add_button">Add</string>
+    <string name="update_button">Update</string>
+    <string name="backButton">Back</string>
+
+    <string name="Assignments">Assignments</string>
+    <string name="assignmentDescription">Enter your Assignment Title</string>
+    <string name="assignmentDueDate">Enter Due Date</string>
+    <string name="assignmentAssociatedClass">Enter Associated Class</string>
+
+    <string name="Exams">Exams</string>
+    <string name="examName">Enter Exam Name</string>
+    <string name="examDate">Enter Exam Date </string>
+    <string name="examLocation">Enter Exam Location</string>
+    <string name="examTime">Enter Exam Time</string>
+
+
+    <string name="ToDoList">To-Do List</string>
+    <string name="enterTask">Enter Task</string>
+
 </resources>

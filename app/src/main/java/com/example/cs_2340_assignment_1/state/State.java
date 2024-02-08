@@ -19,11 +19,12 @@ public final class State {
      */
     private static final Factory factory = new Factory();
 
+
     // STATE FIELDS
     private static HashMap<String, Course> courseMap = new HashMap<>();
-    private static final PriorityQueue<Assignment> assignmentsPriorityQueue = new PriorityQueue<>();
+    private static final HashMap<String, Assignment> assignmentMap = new HashMap<>();
     private static final PriorityQueue<Exam> examsPriorityQueue = new PriorityQueue<>();
-    private static HashMap<String, TodoList> todoLists = new HashMap<>();
+    private static TodoList todoList = new TodoList("list");
 
     // METHODS
     public static Factory getFactory() {
@@ -34,24 +35,24 @@ public final class State {
         return courseMap;
     }
 
-    public static PriorityQueue<Assignment> getAssignmentsPriorityQueue() {
-        return assignmentsPriorityQueue;
+    public static HashMap<String, Assignment> getAssignmentsMap() {
+        return assignmentMap;
     }
 
     public static PriorityQueue<Exam> getExamsPriorityQueue() {
         return examsPriorityQueue;
     }
 
-    public static HashMap<String, TodoList> getTodoLists() {
-        return todoLists;
+    public static TodoList getTodoList() {
+        return todoList;
     }
 
-    private static void setCourseMap(HashMap<String, Course> map) {
+    public static void setCourseMap(HashMap<String, Course> map) {
         courseMap = map;
     }
 
-    private static void setTodoLists(HashMap<String, TodoList> lists) {
-        todoLists = lists;
+    public static void setTodoList(TodoList list) {
+        todoList = list;
     }
 
     // UPDATE
@@ -60,24 +61,23 @@ public final class State {
      * Should be called when any creation, edit, or deletion is made.
      *
      * @param courseMap course map
-     * @param todoLists lists
+     * @param todoList list
      */
-    public static void update(HashMap<String, Course> courseMap, HashMap<String, TodoList> todoLists) {
-        if (State.courseMap != courseMap) {
-            setCourseMap(courseMap);
-            assignmentsPriorityQueue.clear();
-            examsPriorityQueue.clear();
+    public static void update(HashMap<String, Course> courseMap, TodoList todoList) {
+        setCourseMap(courseMap);
+        assignmentMap.clear();
+        examsPriorityQueue.clear();
 
-            for (String key : courseMap.keySet()) {
-                Course c = courseMap.get(key);
-                if (c != null) {
-                    assignmentsPriorityQueue.addAll(c.getAssignments());
-                    examsPriorityQueue.addAll(c.getExams());
+        for (String key : courseMap.keySet()) {
+            Course c = courseMap.get(key);
+            if (c != null) {
+                for (String a: c.getAssignments().keySet()) {
+                    assignmentMap.put(c.getAssignments().get(a).getTitle(), c.getAssignments().get(a));
                 }
+                examsPriorityQueue.addAll(c.getExams());
             }
         }
-        if (State.todoLists != todoLists) {
-            setTodoLists(todoLists);
-        }
+
+        setTodoList(todoList);
     }
 }

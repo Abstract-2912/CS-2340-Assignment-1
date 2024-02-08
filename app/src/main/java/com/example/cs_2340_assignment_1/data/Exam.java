@@ -82,10 +82,6 @@ public final class Exam implements Comparable<Exam> {
             Time duration,
             String notes
     ) {
-        if (name == null || associatedCourse == null || startTime == null || endTime == null) {
-            throw new NullPointerException("Missing fields: can not instantiate exam object");
-        }
-
         this.name = name;
         this.associatedCourse = associatedCourse;
         this.startTime = startTime;

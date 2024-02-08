@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <!-- EditText for getttaskEntrytask description input -->
+    <EditText
+        android:id="@+id/courseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="Enter Course Name"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+    <EditText
+        android:id="@+id/examName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="@string/examName"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+    <!-- TextView and FrameLayout (which contains buttons) for Priority Selection -->
+    <TimePicker
+        android:id="@+id/examTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner" />
+    <DatePicker
+        android:id="@+id/examDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
+    <EditText
+        android:id="@+id/examLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:hint="@string/examLocation"
+        android:paddingBottom="@dimen/activity_horizontal_margin" />
+
+    <!-- Add button -->
+    <Button
+        android:id="@+id/saveButtonExams"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:text="@string/add_button"
+        android:textColor="@android:color/primary_text_dark" />
+
+
+</LinearLayout>
