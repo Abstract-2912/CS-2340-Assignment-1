@@ -66,7 +66,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="650dp"
-        android:text="Back" />
+        android:text="Home" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbarAssignments"
